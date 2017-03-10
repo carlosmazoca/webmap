@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<!--Lembrar de inserir tags em metadescriptions para priorizar buscar no google    -->
+    
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>GeoHereditas - Trilhas Ambientais</title>
+    <link rel="stylesheet" type="text/css" href="webmapstyle.css" />
+    <!--[if IE]><link rel="shortcut icon" href="img/favicon.ico"><![endif]-->
+    <link href="img/favicon.png" rel="shortcut icon" />
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="webmap.js"></script>
+</head>
+
+<body>
+    <!--<div id="wrapper">-->
+    <div id="sidebar">
+        <!--
+<a href='http://bit.ly/1bz1aGt'>
+<div id="header"></div>
+</a>
+<a href='http://bit.ly/1aR4NG9' target="_blank">
+<div id="about">Esse é Sobre este banco de dados e as pesquisas relacionadas</div>
+</a>
+-->
+
+
+
+        <div id="header">
+            <div class="headertitle">Trilhas</div>
+            <div class="headersubtitle">Ambientais</div>
+            <div class="headerdesc">A geologia do litoral norte percorrendo suas trilhas</div>
+        </div>
+
+
+
+        <div id="databox">
+            <div class="title">| Escolha um município:</div>
+
+            <a href='#'>
+                <div class="greyTRI" id="CAR" onclick="closeTrilha()">
+                    Caraguatatuba >>
+                </div>
+            </a>
+
+            <a href='#'>
+                <div class="whiteTRI" id="ILB" onclick="closeTrilha()">
+                    Ilhabela  >>
+                </div>
+            </a>
+
+            <a href='#'>
+                <div class="greyTRI" id="SSB" onclick="closeTrilha()">
+                    São Sebastião  >>
+                </div>
+            </a>
+
+            <a href='#'>
+                <div class="whiteTRI" id="UBT" onclick="closeTrilha()">
+                    Ubatuba  >>
+                </div>
+            </a>
+            
+<!--
+           <a href='#'>
+                <div class="whiteTRI" onclick="janTrilha();closeTrilha()">
+                    Ubatuba  >>
+                </div>
+            </a>            
+-->
+            
+            <br />
+            <br />
+
+
+
+            <div class="title">| Dados ambientais:</div>
+
+            <a href='#'>
+                <div class="grey" onclick="if (layers[1].getMap() !== null) {layers[1].setMap(null);}else{toggleLayer(1);}"> Geologia
+                    <br />
+                </div>
+            </a>
+
+            <a href='#'>
+                <div class="white" onclick="if (layers[2].getMap() !== null) {layers[2].setMap(null);}else{toggleLayer(2);}"> Relevo
+                    <br />
+                </div>
+            </a>
+
+            <a href='#'>
+                <div class="grey" onclick="if (layers[3].getMap() !== null) {layers[3].setMap(null);}else{toggleLayer(3);}"> Solos
+                    <br />
+                </div>
+            </a>
+
+            <a href='#'>
+                <div class="white" onclick="if (layers[4].getMap() !== null) {layers[4].setMap(null);}else{toggleLayer(4);}"> Aquíferos
+                    <br />
+                </div>
+            </a>
+
+            <div class="grey" onclick="if (layers[7].getMap() !== null) {layers[7].setMap(null);}else{toggleLayer(7);}"> Cavernas
+                <br />
+            </div>
+
+            <div class="white" onClick="toggleLayer();"> Diques
+                <br />
+            </div>
+
+            <div class="grey" onclick="if (layers[9].getMap() !== null) {layers[9].setMap(null);}else{toggleLayer(9);}"> Estruturas
+                <br />
+            </div>
+
+            <div class="white" onClick="return false"> Unidades de Conservação
+                <br />
+            </div>
+
+            <div class="grey" onclick="toggleLayer()"> Vegetação
+                <br />
+            </div>
+
+            <div class="white" onclick="if (layers[6].getMap() !== null) {layers[6].setMap(null);}else{toggleLayer(6);}"> Oceano
+                <br />
+            </div>
+
+        </div>
+
+
+
+        <div id="about">
+            GeoHereditas
+        </div>
+
+    </div>
+
+
+
+    <div id="map-canvas"></div>
+
+
+
+
+    <div id="carDrop" class="carDrop-content">
+        <a href="#"
+           onClick="toggleTrilha(21);
+                    toggleTrilha(22);">
+            Trilha do Poção</a>
+        <a href="#"
+           onClick="toggleTrilha(23);
+                    toggleTrilha(24);">
+            Trilha dos Tropeiros</a>
+        <a href="#">
+            Trilha das Setes Fontes</a>
+    </div>
+
+
+
+    <div id="ilbDrop" class="ilbDrop-content">
+        <a href="#"
+           onClick="toggleTrilha(39);">
+            Trilha da Água Branca</a>
+        <a href="#"
+           onClick="toggleTrilha(41);">
+            Trilha do Bonete</a>
+        <a href="#"
+           onClick="toggleTrilha(43);">
+            Trilha da Cachoeira da Água Branca</a>
+        <a href="#"
+           onClick="toggleTrilha(46);
+                    toggleTrilha(47);">
+            Trilha do Pico do Baepí</a>
+        <a href="#"
+           onClick="toggleTrilha(49);">
+            Trilha da Praia da Fome</a>
+    </div>
+
+    
+    <div id="ssbDrop" class="ssbDrop-content">
+        <a href="#"
+           onClick="toggleTrilha(58);">
+            Trilha da Praia Brava</a>
+        <a href="#"
+           onClick="toggleTrilha(61);
+                    toggleTrilha(60);">
+            Estrada Rio Pardo-Limeira</a>
+        <a href="#"
+           onClick="toggleTrilha(62);">
+            Trilha do Sertão Camburi</a>
+        <a href="#"
+           onClick="toggleTrilha(64);">
+            Trilha do Sítio Jatobá</a>
+    </div>
+    
+    <div id="ubtDrop" class="ubtDrop-content">
+        <a href="#"
+           onClick="toggleTrilha(79);
+                    toggleTrilha(78);">
+            Trilha da Brava da Almada</a>
+        <a href="#"
+           onClick="toggleTrilha(81);
+                    toggleTrilha(80);">
+            Triha do Camburi</a>
+        <a href="#"
+           onClick="toggleTrilha(83);
+                    toggleTrilha(82);">
+            Trilha das Cachoeiras</a>
+        <a href="#"
+           onClick="toggleTrilha(86);">
+            Trilha Camburi Trindade</a>
+        <a href="#"
+           onClick="toggleTrilha(89);">
+            Trilha do Jatobá</a>
+        <a href="#"
+           onClick="toggleTrilha(90);">
+            Trilha do Pirapitinga</a>
+        <a href="#"
+           onClick="toggleTrilha(92);">
+            Trilha do Pico do Corcovado</a>
+        <a href="#"
+           onClick="toggleTrilha(94);">
+            Trilha da Praia do Engenho</a>
+        <a href="#"
+           onClick="toggleTrilha(96);">
+            Trilha da Praia do Sul</a>
+        <a href="#"
+           onClick="toggleTrilha(98);">
+            Trilha do Rio Bonito</a>
+        <a href="#"
+           onClick="toggleTrilha(100);">
+            Trilha do Saco Grande</a>
+        <a href="#"
+           onClick="toggleTrilha(102);">
+            Trilha das Sete Praias</a>
+    </div>    
+    
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,380 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Webmap Style */
+/* Code by Carlos Mazoca, Geoscientist and Jack of all trades */
+/*
+Our green:#004221
+Our gold:#996600
+*/
+
+/* Adicionar um background para o databox. Decidir se
+    1 - Eu uso um padrão feito em CSS:
+        http://demo.techglimpse.com/css3-gradient-pattern-texture/
+        http://www.codicode.com/art/css3_backgrounds_and_patterns_gallery.aspx
+        http://lea.verou.me/css3patterns/#
+        http://www.cssdesignawards.com/sites/farrkle/845/
+    2 - Eu uso uma foto/imagem para produzir um fundo como os backgroundes de:
+        www.ofitexto.com.br
+        http://subtlepatterns.com/
+*/
+
+
+html, body {
+    font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+    font-size: 100%;
+    line-height:1.125em; /* 16×1.125=18 */
+}
+
+a {
+   text-decoration: none;
+}
+
+#wrapper {
+/*    position: absolute;*/
+/*    max-width: 75em;*/
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map-canvas {
+    position: absolute;
+    float: right;
+    left: 20%;
+    right: 0;
+    width: 80%;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: hidden;
+    <!--z-index: 1;-->
+}
+
+#sidebar {
+    position: absolute;
+    float: left;
+    top: 0;
+    left: 0;
+    right: 80%;
+    bottom: 0;
+    height: 100%;
+    width: 20%;
+    min-width: 270px;
+    max-width: 40%;
+
+    overflow: hidden;
+    /*background-color: #FFFFFF;*/
+    opacity: 0.8;
+    background:url(          data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAN0lEQVQoU2P88OHDfwEBAUYGHAAkD5bEpRAmDjcBXSEyH8UamAS6Bgy3YLOaNJMIuomg74gJJwD/DUOoKcg2JQAAAABJRU5ErkJggg==
+                ) repeat;
+    /*O plano de fundo do tipo diagonal check pode ser feito também com svg inline, também não será preciso chamar uma imagem.*/
+    <!--z-index: 5;-->
+}
+
+/*
+#header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-image: url(img/headerwebmap.png);
+      background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    <!--z-index: 10;-->
+}
+*/
+
+#header {
+    position: relative;
+    top: 3%;
+    left: 10%;
+    width: 65%;
+    height: 15%;
+    border-top: 6px #004221 solid;
+    border-bottom: 3px #004221 solid;
+    <!--z-index: 10;-->
+}
+
+.headertitle{
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    color: black;
+    font-weight: bold;
+    font-size: 1.8em;
+    letter-spacing: 0.0625em;
+    font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
+    text-shadow: 0 0 0.9em rgb(120, 120, 120);
+
+
+}
+
+.headersubtitle{
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    left: 10%;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+    letter-spacing: 0.0625em;
+    font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
+    text-shadow: 0 0 0.9em rgb(120, 120, 120);
+    
+}
+
+.headerdesc{
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    color: #996600;
+    font-weight: bold;
+    font-size: 0.875em;
+    font-family: "Helvetica", "Verdana", "Geneva", sans-serif;
+}
+
+#about {
+    position: relative;
+    top: 14%;
+    right: 5%;
+    text-align: right;
+    font-weight: bold;
+    color: black;
+    font-size: 0.8125em;
+    letter-spacing: 0.0625em;
+    font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
+    <!--z-index: 10;-->
+}
+
+
+#databox {
+    position: relative;
+    display: block;
+    top: 10%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    <!--z-index: 10;-->
+}
+
+
+.title {
+    position: relative;
+    text-align: left;
+    font-weight: bold;
+    color: black;
+    font-size: 1em;
+    /*font-size: 0.875em;*/
+    font-family: "Helvetica", "Verdana", "Geneva", sans-serif;
+    letter-spacing: 0.0625em;
+    line-height: 250%;
+    /*padding-left: 0.3125em;*/
+    top: 0;
+    left: 10%;
+    width: 100%;
+    text-shadow: 0 0 10px #b4b4b4;
+    z-index: 20;
+}
+
+
+
+.whiteTRI, .white {
+    position: relative;
+    text-align: left;
+    color: #282828;
+    font-size: 0.875em;
+    line-height: 250%;
+    padding-left: 10%;
+    margin: 0.125em 0 0.125em 0;
+    border-color:white;
+    left: 0;
+    right: 0;    
+    height: 250%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 30;
+}
+
+
+.greyTRI, .grey {
+    position: relative;
+    text-align: left;
+    color: #282828;
+    font-size: 0.875em;
+    line-height: 250%;
+    padding-left: 10%;
+    margin: 0.125em 0 0.125em 0;
+    border-color:white;
+    left: 0;
+    right: 0;
+    height: 250%;
+    background-color: rgba(234, 234, 234, 0.7);
+    z-index: 30;
+}
+
+
+.whiteTRI:hover,.greyTRI:hover,.white:hover,.grey:hover {
+    position: relative;
+    text-align: left;
+    color: #022715;
+/*    font-weight: bold;*/
+    font-size: 0.875em;
+    line-height: 250%;
+    margin: 0.125em 0 0.125em 0;
+
+    border-color:white;
+    left: 0;
+    right: 0;
+    height: 250%;
+    background-color: rgba(144, 144, 144, 0.39);
+    box-shadow:  inset -0.3em 0 0 0 #004221;
+    z-index: 30;
+}
+
+.selectedTRI, .selected {
+    position: relative;
+
+    text-align: left;
+    color: black;
+    font-weight: bold;
+
+
+    border-color:white;
+    left: 0;
+    right: 0;
+    background-color: rgba(38, 145, 93, 0.35);
+    box-shadow:  inset -0.3em 0 0 0 #004221;
+
+    z-index: 30;
+}
+
+
+
+.selectedTRI:hover,.selected:hover {
+    position: relative;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+/*    font-size: 0.875em;*/
+/*    line-height: 250%;*/
+/*    margin: 0.125em 0 0.125em 0;*/
+
+    border-color:white;
+    left: 0;
+    right: 0;
+/*    height: 250%;*/
+    background-color: rgba(38, 145, 93, 0.5);
+    box-shadow:  inset -0.3em 0 0 0 #004221;
+    z-index: 30;
+}
+
+
+
+/*
+--------------------------------------------------------------------------
+Estilos para os botões dropdown das trilhas:
+--------------------------------------------------------------------------
+*/
+
+
+
+.carDrop-content {
+
+    left: 20%;
+    top: 26.6%;
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.88);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.ilbDrop-content {
+    left: 20%;
+    top: 26.8%;
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.88);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.ssbDrop-content {
+    left: 20%;
+    top: 32.2%;
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.88);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.ubtDrop-content {
+    left: 20%;
+    top: 21.8%;
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.88);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.carDrop-content a, .ilbDrop-content a, .ssbDrop-content a, .ubtDrop-content a {
+   -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    transition: all 0.8s;       
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    line-height: 70%;
+    
+}
+
+.sel-carDrop-content a, .sel-ilbDrop-content a, .sel-ssbDrop-content a, .sel-ubtDrop-content a
+    {
+    left: 20%;
+    top: 26%;
+    display: none;
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    background-color: rgba(38, 145, 93, 0.35);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.carDrop-content a:hover, .ilbDrop-content a:hover, .ssbDrop-content a:hover, .ubtDrop-content a:hover, .carDrop-content a:hover
+    {
+        background-color: rgba(38, 145, 93, 0.5);
+}
+
+
+.show {
+
+    display:block;
+}
+
+
+/*
+--------------------------------------------------------------------------
+FIM dos estilos para os botões dropdown das trilhas:
+--------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
