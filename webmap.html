@@ -9,7 +9,7 @@
     <title>GeoHereditas - Trilhas Ambientais</title>
     <link rel="stylesheet" type="text/css" href="webmapstyle.css" />
     <!--[if IE]><link rel="shortcut icon" href="img/favicon.ico"><![endif]-->
-    <link href="img/favicon.png" rel="shortcut icon" />
+<!--    <link href="img/favicon.png" rel="shortcut icon" />-->
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="webmap.js"></script>
@@ -77,7 +77,7 @@
 
 
 
-            <div class="title">| Dados ambientais:</div>
+            <div class="title">| Meio Físico:</div>
 
             <a href='#'>
                 <div class="grey" onclick="if (layers[1].getMap() !== null) {layers[1].setMap(null);}else{toggleLayer(1);}"> Geologia
@@ -98,32 +98,16 @@
             </a>
 
             <a href='#'>
-                <div class="white" onclick="if (layers[4].getMap() !== null) {layers[4].setMap(null);}else{toggleLayer(4);}"> Aquíferos
+                <div class="white" onclick="if (layers[7].getMap() !== null) {layers[7].setMap(null);}else{toggleLayer(7);}"> Cavernas
                     <br />
                 </div>
             </a>
 
-            <div class="grey" onclick="if (layers[7].getMap() !== null) {layers[7].setMap(null);}else{toggleLayer(7);}"> Cavernas
+            <div class="grey" onClick="return false"> Vegetação
                 <br />
             </div>
 
-            <div class="white" onClick="toggleLayer();"> Diques
-                <br />
-            </div>
-
-            <div class="grey" onclick="if (layers[9].getMap() !== null) {layers[9].setMap(null);}else{toggleLayer(9);}"> Estruturas
-                <br />
-            </div>
-
-            <div class="white" onClick="return false"> Unidades de Conservação
-                <br />
-            </div>
-
-            <div class="grey" onclick="toggleLayer()"> Vegetação
-                <br />
-            </div>
-
-            <div class="white" onclick="if (layers[6].getMap() !== null) {layers[6].setMap(null);}else{toggleLayer(6);}"> Oceano
+            <div class="white" onClick="return false"> Unidades de conservação
                 <br />
             </div>
 
@@ -131,10 +115,15 @@
 
 
 
-        <div id="about">
-            GeoHereditas
-        </div>
 
+<div class="svg-wrapper">
+    
+    <svg height="70%" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <rect class="shape" x="10" y="1" height="25" width="90%" stroke-width="1"/>
+    </svg>
+    <div class="about"><a href="http://www.igc.usp.br/?id=geohereditas" target="_blank">GeoHereditas</a></a></div>
+</div>
+        
     </div>
 
 
