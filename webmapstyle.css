@@ -6,32 +6,33 @@
 Our green:#004221
 Our gold:#996600
 */
-
 /* Adicionar um background para o databox. Decidir se
-    1 - Eu uso um padrão feito em CSS:
-        http://demo.techglimpse.com/css3-gradient-pattern-texture/
-        http://www.codicode.com/art/css3_backgrounds_and_patterns_gallery.aspx
-        http://lea.verou.me/css3patterns/#
-        http://www.cssdesignawards.com/sites/farrkle/845/
-    2 - Eu uso uma foto/imagem para produzir um fundo como os backgroundes de:
-        www.ofitexto.com.br
-        http://subtlepatterns.com/
+1 - Eu uso um padrão feito em CSS:
+http://demo.techglimpse.com/css3-gradient-pattern-texture/
+http://www.codicode.com/art/css3_backgrounds_and_patterns_gallery.aspx
+http://lea.verou.me/css3patterns/#
+http://www.cssdesignawards.com/sites/farrkle/845/
+2 - Eu uso uma foto/imagem para produzir um fundo como os backgroundes de:
+www.ofitexto.com.br
+http://subtlepatterns.com/
 */
 
-
-html, body {
+html,
+body {
     font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
     font-size: 100%;
-    line-height:1.125em; /* 16×1.125=18 */
+    line-height: 1.125em;
+    /* 16×1.125=18 */
 }
 
 a {
-   text-decoration: none;
+    text-decoration: none;
 }
 
 #wrapper {
-/*    position: absolute;*/
-/*    max-width: 75em;*/
+    /*    position: absolute;*/
+    /*    max-width: 75em;*/
+    
     top: 0;
     bottom: 0;
     right: 0;
@@ -51,7 +52,8 @@ a {
     bottom: 0;
     height: 100%;
     overflow: hidden;
-    <!--z-index: 1;-->
+    <!--z-index: 1;
+    -->
 }
 
 #sidebar {
@@ -60,33 +62,35 @@ a {
     top: 0;
     left: 0;
     right: 80%;
-/*    bottom: 0;*/
+    /*    bottom: 0;*/
+    
     height: 100%;
     width: 20%;
     min-width: 270px;
     max-width: 40%;
-
     overflow: hidden;
     /*background-color: #FFFFFF;*/
+    
     opacity: 0.8;
-    background:url(          data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAN0lEQVQoU2P88OHDfwEBAUYGHAAkD5bEpRAmDjcBXSEyH8UamAS6Bgy3YLOaNJMIuomg74gJJwD/DUOoKcg2JQAAAABJRU5ErkJggg==
-                ) repeat;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAN0lEQVQoU2P88OHDfwEBAUYGHAAkD5bEpRAmDjcBXSEyH8UamAS6Bgy3YLOaNJMIuomg74gJJwD/DUOoKcg2JQAAAABJRU5ErkJggg==
+) repeat;
     /*O plano de fundo do tipo diagonal check pode ser feito também com svg inline, também não será preciso chamar uma imagem.*/
-    <!--z-index: 5;-->
+    
+    <!--z-index: 5;
+    -->
 }
-
 /*
 #header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    background-image: url(img/headerwebmap.png);
-      background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    <!--z-index: 10;-->
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+height: 90px;
+background-image: url(img/headerwebmap.png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100%;
+<!--z-index: 10;-->
 }
 */
 
@@ -98,10 +102,11 @@ a {
     height: 15%;
     border-top: 6px #004221 solid;
     border-bottom: 3px #004221 solid;
-    <!--z-index: 10;-->
+    <!--z-index: 10;
+    -->
 }
 
-.headertitle{
+.headertitle {
     position: absolute;
     top: 15%;
     width: 100%;
@@ -111,11 +116,9 @@ a {
     letter-spacing: 0.0625em;
     font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
     text-shadow: 0 0 0.9em rgb(120, 120, 120);
-
-
 }
 
-.headersubtitle{
+.headersubtitle {
     position: absolute;
     top: 35%;
     width: 100%;
@@ -126,10 +129,9 @@ a {
     letter-spacing: 0.0625em;
     font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
     text-shadow: 0 0 0.9em rgb(120, 120, 120);
-    
 }
 
-.headerdesc{
+.headerdesc {
     position: absolute;
     bottom: 5%;
     width: 100%;
@@ -138,11 +140,8 @@ a {
     font-size: 0.875em;
     font-family: "Helvetica", "Verdana", "Geneva", sans-serif;
 }
-
-
-
-
 /*About and the svg animation: */
+
 .svg-wrapper {
     position: absolute;
     bottom: 0;
@@ -162,7 +161,7 @@ a {
 }
 
 .about {
-    position:relative;
+    position: relative;
     top: -80%;
     text-align: center;
     line-height: 32px;
@@ -171,7 +170,7 @@ a {
     font-size: 0.8125em;
     letter-spacing: 0.0625em;
     font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
-/*    <!--z-index: 10;-->*/
+    /*    <!--z-index: 10;-->*/
 }
 
 @keyframes draw {
@@ -190,6 +189,8 @@ a {
 .svg-wrapper:hover .shape {
     -webkit-animation: 0.5s draw linear forwards;
     animation: 0.5s draw linear forwards;
+    
+
 }
 
 .about:hover {
@@ -204,9 +205,9 @@ a {
     left: 0;
     bottom: 0;
     width: 100%;
-    <!--z-index: 10;-->
+    <!--z-index: 10;
+    -->
 }
-
 
 .title {
     position: relative;
@@ -226,9 +227,88 @@ a {
     z-index: 20;
 }
 
+/* Tooltips text*/
+.help-tip .tooltiptext {
+    visibility: hidden;
+    width: 80%;
+    background-color: rgba(0, 42, 21, 0.77);
+    font-size: 1.0em;
+    font-weight: normal;
+    letter-spacing: 0.0625em;
+    line-height: 130%;
+    font-family: "Helvetica", "Verdana", "Geneva", sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 4px 0;
+    border-radius: 2px;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 95%;
+    left: 1%;
+    /* Fade in tooltip */
+    text-shadow: none;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+/* Tooltip arrow
+Não consigo acertar a posição dela sobre o help-tip, então eu excluí*/
+/*
+.help-tip .tooltiptext::after {
+    content: "";
+    position: relative;
+    top: 20px;
+    left: 52px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 42, 21, 0.77) transparent transparent transparent;
+}
+*/
 
 
-.whiteTRI, .white {
+
+/*Circle to call the tooltip*/
+.help-tip{
+    display: inline-block;
+	text-align: center;
+	background-color: rgba(153, 102, 0, 0.36);
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+	font-size: 11px;
+	line-height: 17px;
+	cursor: default;
+}
+
+/*Question mark on the circle*/
+.help-tip:before{
+	content:'?';
+	font-weight: bold;
+	color:rgb(0, 0, 0);
+}
+
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.help-tip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.help-tip:hover{
+	background-color: rgba(0, 42, 21, 0.70);
+}
+
+.help-tip:hover:before{
+    color: #fff;
+}
+
+
+
+
+.whiteTRI,
+.white {
     position: relative;
     text-align: left;
     color: #282828;
@@ -236,16 +316,16 @@ a {
     line-height: 250%;
     padding-left: 10%;
     margin: 0.125em 0 0.125em 0;
-    border-color:white;
+    border-color: white;
     left: 0;
-    right: 0;    
+    right: 0;
     height: 250%;
     background-color: rgba(255, 255, 255, 0.5);
     z-index: 30;
 }
 
-
-.greyTRI, .grey {
+.greyTRI,
+.grey {
     position: relative;
     text-align: left;
     color: #282828;
@@ -253,7 +333,7 @@ a {
     line-height: 250%;
     padding-left: 10%;
     margin: 0.125em 0 0.125em 0;
-    border-color:white;
+    border-color: white;
     left: 0;
     right: 0;
     height: 250%;
@@ -261,81 +341,74 @@ a {
     z-index: 30;
 }
 
-
-.whiteTRI:hover,.greyTRI:hover,.white:hover,.grey:hover {
+.whiteTRI:hover,
+.greyTRI:hover,
+.white:hover,
+.grey:hover {
     position: relative;
     text-align: left;
     color: #022715;
-/*    font-weight: bold;*/
+    /*    font-weight: bold;*/
+    
     font-size: 0.875em;
     line-height: 250%;
     margin: 0.125em 0 0.125em 0;
-
-    border-color:white;
+    border-color: white;
     left: 0;
     right: 0;
     height: 250%;
     background-color: rgba(144, 144, 144, 0.39);
-    box-shadow:  inset -0.3em 0 0 0 #004221;
+    box-shadow: inset -0.3em 0 0 0 #004221;
     z-index: 30;
 }
 
-.selectedTRI, .selected {
+.selectedTRI,
+.selected {
     position: relative;
-
     text-align: left;
     color: black;
     font-weight: bold;
-
-
-    border-color:white;
+    border-color: white;
     left: 0;
     right: 0;
     background-color: rgba(38, 145, 93, 0.35);
-    box-shadow:  inset -0.3em 0 0 0 #004221;
-
+    box-shadow: inset -0.3em 0 0 0 #004221;
     z-index: 30;
 }
 
-
-
-.selectedTRI:hover,.selected:hover {
+.selectedTRI:hover,
+.selected:hover {
     position: relative;
     text-align: left;
     color: black;
     font-weight: bold;
-/*    font-size: 0.875em;*/
-/*    line-height: 250%;*/
-/*    margin: 0.125em 0 0.125em 0;*/
-
-    border-color:white;
+    /*    font-size: 0.875em;*/
+    /*    line-height: 250%;*/
+    /*    margin: 0.125em 0 0.125em 0;*/
+    
+    border-color: white;
     left: 0;
     right: 0;
-/*    height: 250%;*/
+    /*    height: 250%;*/
+    
     background-color: rgba(38, 145, 93, 0.5);
-    box-shadow:  inset -0.3em 0 0 0 #004221;
+    box-shadow: inset -0.3em 0 0 0 #004221;
     z-index: 30;
 }
-
-
-
 /*
 --------------------------------------------------------------------------
 Estilos para os botões dropdown das trilhas:
 --------------------------------------------------------------------------
 */
 
-
-
 .carDrop-content {
-
     left: 20%;
     top: 26.6%;
     display: none;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.88);
     min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .ilbDrop-content {
@@ -345,7 +418,7 @@ Estilos para os botões dropdown das trilhas:
     position: absolute;
     background-color: rgba(255, 255, 255, 0.88);
     min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .ssbDrop-content {
@@ -355,7 +428,7 @@ Estilos para os botões dropdown das trilhas:
     position: absolute;
     background-color: rgba(255, 255, 255, 0.88);
     min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .ubtDrop-content {
@@ -365,25 +438,29 @@ Estilos para os botões dropdown das trilhas:
     position: absolute;
     background-color: rgba(255, 255, 255, 0.88);
     min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.carDrop-content a, .ilbDrop-content a, .ssbDrop-content a, .ubtDrop-content a {
-   -webkit-transition: all 0.8s;
+.carDrop-content a,
+.ilbDrop-content a,
+.ssbDrop-content a,
+.ubtDrop-content a {
+    -webkit-transition: all 0.8s;
     -moz-transition: all 0.8s;
     -ms-transition: all 0.8s;
     -o-transition: all 0.8s;
-    transition: all 0.8s;       
+    transition: all 0.8s;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     line-height: 70%;
-    
 }
 
-.sel-carDrop-content a, .sel-ilbDrop-content a, .sel-ssbDrop-content a, .sel-ubtDrop-content a
-    {
+.sel-carDrop-content a,
+.sel-ilbDrop-content a,
+.sel-ssbDrop-content a,
+.sel-ubtDrop-content a {
     left: 20%;
     top: 26%;
     display: none;
@@ -392,35 +469,28 @@ Estilos para os botões dropdown das trilhas:
     font-weight: bold;
     background-color: rgba(38, 145, 93, 0.35);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.carDrop-content a:hover, .ilbDrop-content a:hover, .ssbDrop-content a:hover, .ubtDrop-content a:hover, .carDrop-content a:hover
-    {
-        background-color: rgba(38, 145, 93, 0.5);
+.carDrop-content a:hover,
+.ilbDrop-content a:hover,
+.ssbDrop-content a:hover,
+.ubtDrop-content a:hover,
+.carDrop-content a:hover {
+    background-color: rgba(38, 145, 93, 0.5);
 }
-
 
 .show {
-
-    display:block;
+    display: block;
 }
-
-
 /*
 --------------------------------------------------------------------------
 FIM dos estilos para os botões dropdown das trilhas:
 --------------------------------------------------------------------------
 */
 
-
-a:link, a:visited {
-    color:inherit;
-    text-decoration: none;}
-
-
-
-
-
-
-
+a:link,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}

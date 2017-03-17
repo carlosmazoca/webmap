@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
 
-<!--Lembrar de inserir tags em metadescriptions para priorizar buscar no google    -->
+<!--
+Melhorar a fluidez da página: Ao redimensionar a página, a partir do momento em que ela atinge uma largura específica, o map-canvas continua elástico mas o sidebar torna-se fixo/estático.
     
+Fazer infowindows para as trilhas.
+        
+Mais um teste de bounds para as trilhas: Quando abrir nova trilha o map extent passa a abrigar as trilhas que estão abertas.
+    
+Abaixar o lugar onde vai o about junto com a animação.
+    
+Trocar as setas ">>" que acompanham os nomes de municípios por alguma animacão.
+-->
+
+    
+
     
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>GeoHereditas - Trilhas Ambientais</title>
+    <meta name="description" content="Um sistema para acessar conteúdo de geociências (geologia, geografia e ciências afins) interativamente por mapas online." />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Trilhas, Patrimônio Geológico, Geodiversidade, Geoturismo, Interpretação ambiental, Geociências, Geologia, Geografia" />
+
+    
     <link rel="stylesheet" type="text/css" href="webmapstyle.css" />
     <!--[if IE]><link rel="shortcut icon" href="img/favicon.ico"><![endif]-->
 <!--    <link href="img/favicon.png" rel="shortcut icon" />-->
@@ -38,7 +55,12 @@
 
 
         <div id="databox">
-            <div class="title">| Escolha um município:</div>
+            <div class="title">| Escolha um município:  
+                <div class="help-tip">
+                    <span class="tooltiptext">Ao clicar no nome do município será mostrada uma lista de trilhas</span>
+                </div>
+                
+            </div>
 
             <a href='#'>
                 <div class="greyTRI" id="CAR" onclick="closeTrilha()">
@@ -64,20 +86,17 @@
                 </div>
             </a>
             
-<!--
-           <a href='#'>
-                <div class="whiteTRI" onclick="janTrilha();closeTrilha()">
-                    Ubatuba  >>
-                </div>
-            </a>            
--->
             
             <br />
             <br />
 
 
 
-            <div class="title">| Meio Físico:</div>
+            <div class="title">| Meio Físico:  
+                <div class="help-tip">
+                <span class="tooltiptext">Aqui você tem acesso a mapas interativos</span>
+                </div>    
+            </div>
 
             <a href='#'>
                 <div class="grey" onclick="if (layers[1].getMap() !== null) {layers[1].setMap(null);}else{toggleLayer(1);}"> Geologia

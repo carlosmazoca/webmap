@@ -18,9 +18,7 @@
 
 var map;
 var layers = [];
-//var minZoomLevel = 15;
-//var opt = { minZoom: 15, maxZoom: 45 };
-var opt = { zoom: 15};
+
 
 
 // Função para trocar os layers das trilhas onclick
@@ -94,6 +92,10 @@ function toggleLayer(i) {
 }
 
 
+
+
+
+
 // Função que inicializa o mapa
 function initialize() {
     'use strict';
@@ -104,7 +106,6 @@ function initialize() {
 
 
     });
-
 
 //    google.maps.event.addListener(map, 'zoom_changed', function () {
 //        if (map.getZoom() < minZoomLevel) {
@@ -940,12 +941,11 @@ function initialize() {
         layers[i].setMap(null);
     }
 
-
-
 }
 
 
 
+    
 
 
 
