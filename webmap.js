@@ -1,27 +1,14 @@
 /*global $ */
 
-// organizar o css/estilo da janela de seleção de trilhas
-
-
-// Set the KML path
-//kml_path = "http://www.nhc.noaa.gov/storm_graphics/api/AL092011_019adv_"
-//
-//// Load the KML files (must be publically available)
-//coneLayer = new google.maps.KmlLayer(
-//  kml_path + "CONE.kmz", 
-//    {preserveViewport: true}
-//  );
-
-
-
+// JS Document
+// Code by Carlos Mazoca, Geoscientist and Jack of all trades
 
 
 var map;
 var layers = [];
 
 
-
-// Função para trocar os layers das trilhas onclick
+// Toggle layers (trilhas/hiking trails) onclick
 function toggleTrilha(i) {
     'use strict';
     if (layers[i].getMap() === null) {
@@ -36,7 +23,7 @@ function toggleTrilha(i) {
 }
 
 
-// Função para excluir todas as trilhas abertas ao clicar no nome do município
+// Remove hiking trails if clicked on municipality/city name
 function closeTrilha() {
     'use strict';
     layers[20].setMap(null);
@@ -73,9 +60,8 @@ function closeTrilha() {
 }
 
 
-
-
-// Função para trocar os layers dos temas onclick, essa função desativa o layer anterior
+// Toggle layers (meio físico/environmental layers) onclick.
+// This function allows to deactivate an existing layer if a new one is selected
 function toggleLayer(i) {
     'use strict';
     layers[1].setMap(null);
@@ -92,29 +78,17 @@ function toggleLayer(i) {
 }
 
 
-
-
-
-
-// Função que inicializa o mapa
+// Initialize the map
 function initialize() {
     'use strict';
     map = new google.maps.Map(document.getElementById('map-canvas'), {
         center: new google.maps.LatLng(-23.682115699537057, -45.33391768457034),
         zoom: 10,
         mapTypeId: google.maps.MapTypeId.TERRAIN
-
-
     });
 
-//    google.maps.event.addListener(map, 'zoom_changed', function () {
-//        if (map.getZoom() < minZoomLevel) {
-//            map.setZoom(minZoomLevel);
-//        }
-//    });
 
-
-    //Função para ativar/desativar o container com a lista das trilhas
+    // Activate/Deactive conteiner of hiking trail for each municipality/city
     $('.whiteTRI,.greyTRI').on('click', function () {
         if ($(this).is("#CAR")) {
             document.getElementById("ilbDrop").classList.remove("show");
@@ -143,8 +117,8 @@ function initialize() {
     });
 
 
-    // Função  para definir as cores dos botões dos temas quando clicados
-    // Não pode haver uma única função misturando temas e botões dos municípios    
+    // Define button colors (meio físico/environmental layers) when clicked
+    // This function only applies to the environmental layers
     $(document).ready(function () {
         $('.white,.grey').on('click', function () {
             var isActive = ($(this).hasClass('selected')) ? true : false; // checks if it is already active
@@ -156,7 +130,8 @@ function initialize() {
     });
 
 
-    // Função  para definir as cores dos botões dos municípios quando clicados    
+    // Define button colors (municipality/city) when clicked
+    // This function only applies to the city layers
     $(document).ready(function () {
         $('.whiteTRI,.greyTRI').on('click', function () {
             var isActive = ($(this).hasClass('selectedTRI')) ? true : false; // checks if it is already active
@@ -168,7 +143,8 @@ function initialize() {
     });
 
 
-    // Função  para definir as cores dos botões das trilhas quando clicados         
+    // Define button colors (hiking trails) when clicked
+    // This function only applies to the hiking trail layers
     $(".carDrop-content a, .ilbDrop-content a, .ssbDrop-content a, .ubtDrop-content a").click(function () {
         $('selectedTRI').removeClass('selectedTRI');
         $(this).toggleClass('selectedTRI');
@@ -181,10 +157,12 @@ function initialize() {
 
 
     //////////////////////////////////////////////
+    //////////////////////////////////////////////
 
-    // 1. DADOS
+    // 1. KML  (hiking trails) and Fusion Tables Layers (environmental layers)
+    // I WOULD REALLY APPRECIATE if I could put it all in a different JS document
 
-    // 1.1 TEMAS
+    // 1.1 Fusion Tables Layers (environmental layers)
 
     //		Geossítios GeoHereditas
     layers[0] = new google.maps.FusionTablesLayer({
@@ -421,14 +399,14 @@ function initialize() {
 
 
 
-    // 1.2 TRILHAS
+    // 2 KML layers (hiking trails)
 
-    // 1.2.1 TRILHAS EM CARAGUATATUBA    
+    // 2.1 TRILHAS EM CARAGUATATUBA    
 
     //crg_tp	Trilha do Poção    
     layers[21] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/CRG_TP.kml', {
         preserveViewport: false,
-        map:map
+        map: map
     });
 
     layers[22] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/CRG_TP_PP.kml', {
@@ -526,7 +504,7 @@ function initialize() {
         map: map
     });
 
-    // 1.2.2 TRILHAS EM ILHABELA
+    // 2.2 TRILHAS EM ILHABELA
 
     //ilb_tab	Trilha da Água Branca [NÃO TEMOS AINDA]
     layers[38] = new google.maps.KmlLayer('', {
@@ -650,7 +628,7 @@ function initialize() {
 
 
 
-    // 1.2.3 TRILHAS EM SÃO SEBASTIÃO
+    // 2.3 TRILHAS EM SÃO SEBASTIÃO
 
 
     //ssb_tpb	Trilha da Praia Brava
@@ -776,7 +754,7 @@ function initialize() {
 
 
 
-    // 1.2.4 TRILHAS EM UBATUBA
+    // 2.4 TRILHAS EM UBATUBA
 
     //ubt_tba	Trilha da Brava da Almada
     layers[78] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/UBT_TBA.kml', {
@@ -936,19 +914,12 @@ function initialize() {
 
 
 
-    //loop that sets the map to the layers        
+    //Loop that sets the map to the layers        
     for (var i = 0; i < layers.length; i++) {
         layers[i].setMap(null);
     }
 
 }
-
-
-
-    
-
-
-
 
 
 
