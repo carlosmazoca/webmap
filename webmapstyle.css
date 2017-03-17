@@ -6,23 +6,13 @@
 Our green:#004221
 Our gold:#996600
 */
-/* Adicionar um background para o databox. Decidir se
-1 - Eu uso um padrão feito em CSS:
-http://demo.techglimpse.com/css3-gradient-pattern-texture/
-http://www.codicode.com/art/css3_backgrounds_and_patterns_gallery.aspx
-http://lea.verou.me/css3patterns/#
-http://www.cssdesignawards.com/sites/farrkle/845/
-2 - Eu uso uma foto/imagem para produzir um fundo como os backgroundes de:
-www.ofitexto.com.br
-http://subtlepatterns.com/
-*/
 
 html,
 body {
     font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
     font-size: 100%;
     line-height: 1.125em;
-    /* 16×1.125=18 */
+    /* 16×1.125=18 <- This is here to help the conversion from pixel to em*/
 }
 
 a {
@@ -44,30 +34,40 @@ a {
 
 #map-canvas {
     position: absolute;
-    float: right;
-    left: 20%;
+    /*    float: right;*/
+    
+    left: 17.5em;
     right: 0;
-    width: 80%;
+    /*    width: 80%;*/
+    
     top: 0;
     bottom: 0;
+    /*    padding:0;*/
+    
     height: 100%;
     overflow: hidden;
     <!--z-index: 1;
     -->
 }
+/*I'm having some serious issues regarding elasticity/fluidity of the elements in the sidebar. HAVE TO FIX IT.*/
 
 #sidebar {
-    position: absolute;
-    float: left;
+    position: fixed;
+    /*    float: left;*/
+    
     top: 0;
     left: 0;
-    right: 80%;
+    /*    right: 80%;*/
     /*    bottom: 0;*/
     
     height: 100%;
-    width: 20%;
-    min-width: 270px;
-    max-width: 40%;
+    width: 17.5em;
+    padding: 0;
+    /*
+min-width: 270px;
+max-width: 40%;
+*/
+    
     overflow: hidden;
     /*background-color: #FFFFFF;*/
     
@@ -79,20 +79,6 @@ a {
     <!--z-index: 5;
     -->
 }
-/*
-#header {
-position: relative;
-top: 0;
-left: 0;
-width: 100%;
-height: 90px;
-background-image: url(img/headerwebmap.png);
-background-repeat: no-repeat;
-background-position: center;
-background-size: 100%;
-<!--z-index: 10;-->
-}
-*/
 
 #header {
     position: relative;
@@ -107,7 +93,7 @@ background-size: 100%;
 }
 
 .headertitle {
-    position: absolute;
+    position: relative;
     top: 15%;
     width: 100%;
     color: black;
@@ -119,8 +105,8 @@ background-size: 100%;
 }
 
 .headersubtitle {
-    position: absolute;
-    top: 35%;
+    position: relative;
+    top: 20%;
     width: 100%;
     left: 10%;
     color: black;
@@ -132,22 +118,26 @@ background-size: 100%;
 }
 
 .headerdesc {
-    position: absolute;
-    bottom: 5%;
+    position: relative;
+    top: 45%;
     width: 100%;
     color: #996600;
     font-weight: bold;
     font-size: 0.875em;
     font-family: "Helvetica", "Verdana", "Geneva", sans-serif;
 }
-/*About and the svg animation: */
+/*
+--------------------------------------------------------------------------
+Svg animation in the GeoHereditas name on the bottom of the sidebar:
+--------------------------------------------------------------------------
+*/
 
 .svg-wrapper {
     position: absolute;
-    bottom: 0;
-    left: 20%;
+    top: 98%;
+    left: 42%;
     height: 4%;
-    margin: 0 auto;
+    margin: 3px auto;
     transform: translateY(-50%);
     width: 60%;
 }
@@ -155,7 +145,7 @@ background-size: 100%;
 .shape {
     fill: transparent;
     stroke-dasharray: 140 300;
-    stroke-dashoffset: -265;
+    stroke-dashoffset: -185;
     stroke-width: 1px;
     stroke: #996600;
 }
@@ -177,7 +167,7 @@ background-size: 100%;
     0% {
         stroke-dasharray: 140 540;
         stroke-dashoffset: -474;
-        stroke-width: 8px;
+        stroke-width: 6px;
     }
     100% {
         stroke-dasharray: 760;
@@ -189,14 +179,17 @@ background-size: 100%;
 .svg-wrapper:hover .shape {
     -webkit-animation: 0.5s draw linear forwards;
     animation: 0.5s draw linear forwards;
-    
-
 }
 
 .about:hover {
     color: #996600;
-
 }
+/*
+--------------------------------------------------------------------------
+The main part of the sidebar. Where selections by the user are made.
+--------------------------------------------------------------------------
+*/
+/*Probably I'll have to divide this part*/
 
 #databox {
     position: relative;
@@ -216,18 +209,25 @@ background-size: 100%;
     color: black;
     font-size: 1em;
     /*font-size: 0.875em;*/
+    
     font-family: "Helvetica", "Verdana", "Geneva", sans-serif;
     letter-spacing: 0.0625em;
     line-height: 250%;
     /*padding-left: 0.3125em;*/
+    
     top: 0;
     left: 10%;
-    width: 100%;
+    /*    width: 100%;*/
+    
     text-shadow: 0 0 10px #b4b4b4;
     z-index: 20;
 }
+/*
+--------------------------------------------------------------------------
+Tooltips texts
+--------------------------------------------------------------------------
+*/
 
-/* Tooltips text*/
 .help-tip .tooltiptext {
     visibility: hidden;
     width: 80%;
@@ -242,70 +242,70 @@ background-size: 100%;
     padding: 4px 0;
     border-radius: 2px;
     /* Position the tooltip text */
+    
     position: absolute;
     z-index: 1;
     bottom: 95%;
     left: 1%;
     /* Fade in tooltip */
+    
     text-shadow: none;
     opacity: 0;
     transition: opacity 2s;
 }
-
 /* Tooltip arrow
-Não consigo acertar a posição dela sobre o help-tip, então eu excluí*/
+I couldn't manage to place the arrow above que circle with the question mark. So I excluded it*/
 /*
 .help-tip .tooltiptext::after {
-    content: "";
-    position: relative;
-    top: 20px;
-    left: 52px;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: rgba(0, 42, 21, 0.77) transparent transparent transparent;
+content: "";
+position: relative;
+top: 20px;
+left: 52px;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: rgba(0, 42, 21, 0.77) transparent transparent transparent;
 }
 */
-
-
-
 /*Circle to call the tooltip*/
-.help-tip{
+
+.help-tip {
     display: inline-block;
-	text-align: center;
-	background-color: rgba(153, 102, 0, 0.36);
-	border-radius: 50%;
-	width: 16px;
-	height: 16px;
-	font-size: 11px;
-	line-height: 17px;
-	cursor: default;
+    text-align: center;
+    background-color: rgba(153, 102, 0, 0.36);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+    line-height: 17px;
+    cursor: default;
 }
-
 /*Question mark on the circle*/
-.help-tip:before{
-	content:'?';
-	font-weight: bold;
-	color:rgb(0, 0, 0);
+
+.help-tip:before {
+    content: '?';
+    font-weight: bold;
+    color: rgb(0, 0, 0);
 }
-
-
 /* Show the tooltip text when you mouse over the tooltip container */
+
 .help-tip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
 }
 
-.help-tip:hover{
-	background-color: rgba(0, 42, 21, 0.70);
+.help-tip:hover {
+    background-color: rgba(0, 42, 21, 0.70);
 }
 
-.help-tip:hover:before{
+.help-tip:hover:before {
     color: #fff;
 }
-
-
-
+/*
+--------------------------------------------------------------------------
+Style for the white/grey lines of selection in the databox
+--------------------------------------------------------------------------
+*/
 
 .whiteTRI,
 .white {
@@ -397,12 +397,12 @@ Não consigo acertar a posição dela sobre o help-tip, então eu excluí*/
 }
 /*
 --------------------------------------------------------------------------
-Estilos para os botões dropdown das trilhas:
+Hiking trails list style
 --------------------------------------------------------------------------
 */
 
 .carDrop-content {
-    left: 20%;
+    left: 17.5em;
     top: 26.6%;
     display: none;
     position: absolute;
@@ -412,7 +412,7 @@ Estilos para os botões dropdown das trilhas:
 }
 
 .ilbDrop-content {
-    left: 20%;
+    left: 17.5em;
     top: 26.8%;
     display: none;
     position: absolute;
@@ -422,7 +422,7 @@ Estilos para os botões dropdown das trilhas:
 }
 
 .ssbDrop-content {
-    left: 20%;
+    left: 17.5em;
     top: 32.2%;
     display: none;
     position: absolute;
@@ -432,7 +432,7 @@ Estilos para os botões dropdown das trilhas:
 }
 
 .ubtDrop-content {
-    left: 20%;
+    left: 17.5em;
     top: 21.8%;
     display: none;
     position: absolute;
@@ -461,7 +461,8 @@ Estilos para os botões dropdown das trilhas:
 .sel-ilbDrop-content a,
 .sel-ssbDrop-content a,
 .sel-ubtDrop-content a {
-    left: 20%;
+    /*    left: 17.5em;*/
+    
     top: 26%;
     display: none;
     position: absolute;
@@ -483,11 +484,6 @@ Estilos para os botões dropdown das trilhas:
 .show {
     display: block;
 }
-/*
---------------------------------------------------------------------------
-FIM dos estilos para os botões dropdown das trilhas:
---------------------------------------------------------------------------
-*/
 
 a:link,
 a:visited {
