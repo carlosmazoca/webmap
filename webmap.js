@@ -1,20 +1,5 @@
 /*global $ */
 
-// organizar o css/estilo da janela de seleção de trilhas
-
-
-// Set the KML path
-//kml_path = "http://www.nhc.noaa.gov/storm_graphics/api/AL092011_019adv_"
-//
-//// Load the KML files (must be publically available)
-//coneLayer = new google.maps.KmlLayer(
-//  kml_path + "CONE.kmz", 
-//    {preserveViewport: true}
-//  );
-
-
-
-
 
 var map;
 var layers = [];

@@ -6,16 +6,6 @@
 Our green:#004221
 Our gold:#996600
 */
-/* Adicionar um background para o databox. Decidir se
-1 - Eu uso um padrão feito em CSS:
-http://demo.techglimpse.com/css3-gradient-pattern-texture/
-http://www.codicode.com/art/css3_backgrounds_and_patterns_gallery.aspx
-http://lea.verou.me/css3patterns/#
-http://www.cssdesignawards.com/sites/farrkle/845/
-2 - Eu uso uma foto/imagem para produzir um fundo como os backgroundes de:
-www.ofitexto.com.br
-http://subtlepatterns.com/
-*/
 
 html,
 body {
@@ -79,20 +69,6 @@ a {
     <!--z-index: 5;
     -->
 }
-/*
-#header {
-position: relative;
-top: 0;
-left: 0;
-width: 100%;
-height: 90px;
-background-image: url(img/headerwebmap.png);
-background-repeat: no-repeat;
-background-position: center;
-background-size: 100%;
-<!--z-index: 10;-->
-}
-*/
 
 #header {
     position: relative;
