@@ -9,6 +9,7 @@ var map;
 var layers = [];
 
 
+
 // Toggle layers (trilhas/hiking trails) onclick
 function toggleTrilha(i) {
     'use strict';
@@ -137,8 +138,11 @@ function initialize() {
         $('.whiteTRI,.greyTRI').on('click', function () {
             var isActive = ($(this).hasClass('selectedTRI')) ? true : false; // checks if it is already active
             $('.selectedTRI').removeClass('selectedTRI');
+            $('.close').removeClass('close');
+
             if (!isActive) {
                 $(this).addClass('selectedTRI');
+                $(this).addClass('close');
             } // set active only if it was not active
         });
     });
@@ -412,6 +416,12 @@ function initialize() {
 
     layers[22] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/CRG_TP_PP.kml', {
         preserveViewport: false,
+        
+        animation: google.maps.Animation.DROP,
+
+        label: {
+            text: '!'
+        },
         map: map
     });
 
@@ -918,10 +928,9 @@ function initialize() {
     //Loop that sets the map to the layers        
     for (var i = 0; i < layers.length; i++) {
         layers[i].setMap(null);
-    }
+    }    
 
 }
-
 
 
 google.maps.event.addDomListener(window, 'load', initialize);
