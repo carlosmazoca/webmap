@@ -82,10 +82,11 @@ max-width: 40%;
 
 #header {
     position: relative;
-    top: 3%;
+    top: 2%;
     left: 10%;
     max-width: 65%;
-/*    height: 15%;*/
+    /*    height: 15%;*/
+    
     height: 15vh;
     border-top: 6px #004221 solid;
     border-bottom: 3px #004221 solid;
@@ -96,39 +97,54 @@ max-width: 40%;
 .headertitle {
     position: absolute;
     top: 10%;
-/*    max-width: 100%;*/
+    /*    max-width: 100%;*/
+    
     color: black;
     font-weight: bold;
-/*    font-size: 1.8em;*/
-    font-size: 3vh;
+    /*    font-size: 1.8em;*/
+    /*    font-size: 3vh;*/
+    
+    font-size: 150%;
     letter-spacing: 0.0625em;
     font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
-    text-shadow: 0 0 0.9em rgb(120, 120, 120);
+    /*    text-shadow: 0 0 0.9em rgb(120, 120, 120);*/
 }
 
 .headersubtitle {
     position: absolute;
-    top: 30%;
-/*    max-width: 100%;*/
+    top: 33%;
+    /*    max-width: 100%;*/
+    
     left: 10%;
     color: black;
     font-weight: bold;
-/*    font-size: 1.5em;*/
-    font-size: 2.5vh;
+    /*    font-size: 1.5em;*/
+    /*    font-size: 2.5vh;*/
+    
+    font-size: 120%;
     letter-spacing: 0.0625em;
     font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
-    text-shadow: 0 0 0.9em rgb(120, 120, 120);
+    /*    text-shadow: 0 0 0.9em rgb(120, 120, 120);*/
 }
 
 .headerdesc {
     position: absolute;
     bottom: 5%;
-/*    max-width: 100%;*/
+    /*    max-width: 100%;*/
+    
     color: #996600;
     font-weight: bold;
-/*    font-size: 0.875em;*/
-    font-size: 1.4vh;
+    /*    font-size: 0.875em;*/
+    /*    font-size: 1.6vh;*/
+    
+    font-size: 72%;
     font-family: "Helvetica", "Verdana", "Geneva", sans-serif;
+}
+
+.headertitle:hover,
+.headersubtitle:hover,
+.headerdesc:hover {
+    text-shadow: 0 0 0.9em #cccccc;
 }
 /*
 --------------------------------------------------------------------------
@@ -138,9 +154,9 @@ Svg animation in the GeoHereditas name on the bottom of the sidebar:
 
 .svg-wrapper {
     position: absolute;
-    top: 98%;
-    left: 42%;
-    height: 4%;
+    top: 97.5%;
+    left: 41%;
+    height: 5%;
     margin: 3px auto;
     transform: translateY(-50%);
     width: 60%;
@@ -156,14 +172,15 @@ Svg animation in the GeoHereditas name on the bottom of the sidebar:
 
 .about {
     position: relative;
-    top: -80%;
+    top: -93%;
     text-align: center;
     line-height: 32px;
     font-weight: bold;
     color: black;
-/*    font-size: 0.8125em;*/
-        font-size: 1.3vh;
-
+    /*    font-size: 0.8125em;*/
+    /*        font-size: 1.4vh;*/
+    
+    font-size: 70%;
     letter-spacing: 0.0625em;
     font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
     /*    <!--z-index: 10;-->*/
@@ -202,9 +219,26 @@ The main part of the sidebar. Where selections by the user are made.
     display: block;
     top: 10%;
     left: 0;
-    bottom: 0;
+    /*    bottom: 0;*/
+    
     width: 100%;
     <!--z-index: 10;
+    -->
+}
+
+#databox_upper {
+    position: relative;
+    left: 0;
+    width: 100%;
+    <!--z-index: 15;
+    -->
+}
+
+#databox_bottom {
+    position: relative;
+    left: 0;
+    width: 100%;
+    <!--z-index: 15;
     -->
 }
 
@@ -213,8 +247,10 @@ The main part of the sidebar. Where selections by the user are made.
     text-align: left;
     font-weight: bold;
     color: black;
-/*    font-size: 1em;*/
-    font-size: 1.65vh;
+    /*    font-size: 1em;*/
+    /*    font-size: 2vh;*/
+    
+    font-size: 90%;
     font-family: "Helvetica", "Verdana", "Geneva", sans-serif;
     letter-spacing: 0.0625em;
     line-height: 250%;
@@ -222,7 +258,6 @@ The main part of the sidebar. Where selections by the user are made.
     
     top: 0;
     left: 10%;
-    
     text-shadow: 0 0 10px #b4b4b4;
     z-index: 20;
 }
@@ -236,16 +271,17 @@ Tooltips texts
     visibility: hidden;
     width: 80%;
     background-color: rgba(0, 42, 21, 0.77);
-/*    font-size: 1.0em;*/
-        font-size: 1.1vh;
-
+    /*    font-size: 1.0em;*/
+    /*        font-size: 1.5vh;*/
+    
+    font-size: 77%;
     font-weight: normal;
     letter-spacing: 0.0625em;
     line-height: 130%;
     font-family: "Helvetica", "Verdana", "Geneva", sans-serif;
     color: #fff;
     text-align: center;
-    padding: 4px 0;
+    padding: 4px;
     border-radius: 2px;
     /* Position the tooltip text */
     
@@ -282,8 +318,9 @@ border-color: rgba(0, 42, 21, 0.77) transparent transparent transparent;
     border-radius: 50%;
     width: 16px;
     height: 16px;
-/*    font-size: 11px;*/
-    font-size: 1.1vh;
+    /*    font-size: 11px;*/
+    /*    font-size: 1.6vh;*/
+    
     line-height: 17px;
     cursor: default;
 }
@@ -308,27 +345,22 @@ border-color: rgba(0, 42, 21, 0.77) transparent transparent transparent;
 .help-tip:hover:before {
     color: #fff;
 }
-
-
 /*
 --------------------------------------------------------------------------
 Close button at the city names
 --------------------------------------------------------------------------
 */
 
-
 .close::after {
-    position:absolute;
-    content:'\00d7';
+    position: absolute;
+    content: '\00d7';
     font-family: Garamond, "Apple Garamond";
-    font-size:200%;
-    color:#900;
+    font-size: 200%;
+    color: #900;
     opacity: 0.6;
-    left:88%;
+    left: 88%;
     z-index: 35;
 }
-
-
 /*
 --------------------------------------------------------------------------
 Style for the white/grey lines of selection in the databox
@@ -340,8 +372,10 @@ Style for the white/grey lines of selection in the databox
     position: relative;
     text-align: left;
     color: #282828;
-/*    font-size: 0.875em;*/
-       font-size: 1.4vh;
+    /*    font-size: 0.875em;*/
+    /*       font-size: 2vh;*/
+    
+    font-size: 85%;
     line-height: 250%;
     padding-left: 10%;
     margin: 0.125em 0 0.125em 0;
@@ -358,8 +392,10 @@ Style for the white/grey lines of selection in the databox
     position: relative;
     text-align: left;
     color: #282828;
-/*    font-size: 0.875em;*/
-    font-size: 1.4vh;
+    /*    font-size: 0.875em;*/
+    /*    font-size: 2vh;*/
+    
+    font-size: 85%;
     line-height: 250%;
     padding-left: 10%;
     margin: 0.125em 0 0.125em 0;
@@ -379,10 +415,10 @@ Style for the white/grey lines of selection in the databox
     text-align: left;
     color: #022715;
     /*    font-weight: bold;*/
+    /*    font-size: 0.875em;*/
+    /*        font-size: 2vh;*/
     
-/*    font-size: 0.875em;*/
-        font-size: 1.4vh;
-
+    font-size: 85%;
     line-height: 250%;
     margin: 0.125em 0 0.125em 0;
     border-color: white;
