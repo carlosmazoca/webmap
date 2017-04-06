@@ -1,3 +1,6 @@
+<!--Organizar no HTML e no JS os códigos de acordo com as 3 trilhas por município que entrarão no lançamento-->
+
+
 <!DOCTYPE html>
 
 <html>
@@ -27,8 +30,10 @@
     <div id="sidebar">
 
         <div id="header">
-            <div class="headertitle">Trilhas</div>
-            <div class="headersubtitle">Ambientais</div>
+            <a href="http://www.igc.usp.br/index.php?id=616" alt="" title="Clique para conhecer o projeto" target="_blank">
+                <div class="headertitle">Trilhas</div>
+                <div class="headersubtitle">Ambientais</div>
+            </a>
             <div class="headerdesc">A geologia do litoral norte percorrendo suas trilhas</div>
         </div>
 
@@ -82,7 +87,7 @@
                 </div>
 
                 <a href='#'>
-                    <div class="grey" onclick="if (layers[1].getMap() !== null) {layers[1].setMap(null);}else{toggleLayer(1);}"> Geologia
+                    <div class="grey" onclick="if (layers[0].getMap() !== null) {layers[0].setMap(null);}else{toggleLayer(0);}"> Geologia
                         <br />
                     </div>
                 </a>
@@ -100,21 +105,19 @@
                 </a>
 
                 <a href='#'>
-                    <div class="white" onclick="if (layers[7].getMap() !== null) {layers[7].setMap(null);}else{toggleLayer(7);}"> Cavernas
+                    <div class="white" onclick="if (layers[4].getMap() !== null) {layers[4].setMap(null);}else{toggleLayer(4);}"> Cavernas
                         <br />
                     </div>
                 </a>
 
                 <a href='#'>
-
-                    <div class="grey" onClick="return false"> Vegetação
+                    <div class="grey" onclick="if (layers[5].getMap() !== null) {layers[5].setMap(null);}else{toggleLayer(5);}"> Vegetação
                         <br />
                     </div>
                 </a>
 
                 <a href='#'>
-
-                    <div class="white" onClick="return false"> Unidades de conservação
+                    <div class="white" onclick="if (layers[6].getMap() !== null) {layers[6].setMap(null);}else{toggleLayer(6);}"> Unidades de conservação
                         <br />
                     </div>
                 </a>
@@ -146,11 +149,11 @@
     <div id="carDrop" class="carDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
 Clique nos pontos para informação específica.">
         <a href="#" onClick="toggleTrilha(21);toggleTrilha(22)">
-Trilha do Poção</a>
+Trilha do Jequitibá</a>
         <a href="#" onClick="toggleTrilha(23);toggleTrilha(24);">
-Trilha dos Tropeiros</a>
+Trilha do Poção</a>
         <a href="#">
-Trilha das Setes Fontes</a>
+Trilha dos Tropeiros</a>
     </div>
 
 
@@ -161,53 +164,30 @@ Clique nos pontos para informação específica.">
 Trilha da Água Branca</a>
         <a href="#" onClick="toggleTrilha(41);">
 Trilha do Bonete</a>
-        <a href="#" onClick="toggleTrilha(43);">
-Trilha da Cachoeira da Água Branca</a>
         <a href="#" onClick="toggleTrilha(46);toggleTrilha(47);">
 Trilha do Pico do Baepí</a>
-        <a href="#" onClick="toggleTrilha(49);">
-Trilha da Praia da Fome</a>
     </div>
 
 
     <div id="ssbDrop" class="ssbDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
 Clique nos pontos para informação específica.">
+        <a href="#" onClick="toggleTrilha(64);">
+Trilha do Jatobá Rizzieri</a>
         <a href="#" onClick="toggleTrilha(58);">
 Trilha da Praia Brava</a>
-        <a href="#" onClick="toggleTrilha(61);toggleTrilha(60);">
-Estrada Rio Pardo-Limeira</a>
         <a href="#" onClick="toggleTrilha(62);">
 Trilha do Sertão Camburi</a>
-        <a href="#" onClick="toggleTrilha(64);">
-Trilha do Sítio Jatobá</a>
+
     </div>
 
     <div id="ubtDrop" class="ubtDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
 Clique nos pontos para informação específica.">
         <a href="#" onClick="toggleTrilha(79);toggleTrilha(78);">
 Trilha da Brava da Almada</a>
-        <a href="#" onClick="toggleTrilha(81);toggleTrilha(80);">
-Triha do Camburi</a>
-        <a href="#" onClick="toggleTrilha(83);toggleTrilha(82);">
-Trilha das Cachoeiras</a>
-        <a href="#" onClick="toggleTrilha(86);">
-Trilha Camburi Trindade</a>
-        <a href="#" onClick="toggleTrilha(89);">
-Trilha do Jatobá</a>
-        <a href="#" onClick="toggleTrilha(90);">
-Trilha do Pirapitinga</a>
         <a href="#" onClick="toggleTrilha(92);">
 Trilha do Pico do Corcovado</a>
-        <a href="#" onClick="toggleTrilha(94);">
-Trilha da Praia do Engenho</a>
         <a href="#" onClick="toggleTrilha(96);">
 Trilha da Praia do Sul</a>
-        <a href="#" onClick="toggleTrilha(98);">
-Trilha do Rio Bonito</a>
-        <a href="#" onClick="toggleTrilha(100);">
-Trilha do Saco Grande</a>
-        <a href="#" onClick="toggleTrilha(102);">
-Trilha das Sete Praias</a>
     </div>
 
 
