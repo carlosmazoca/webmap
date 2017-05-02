@@ -469,9 +469,15 @@ Hiking trails list style
 --------------------------------------------------------------------------
 */
 
+#content-conteiner {
+    position: relative;
+}
+
 .carDrop-content {
-    left: 17.5em;
-    top: 26.6%;
+    left: 17.0em;
+    /*    top: 15.5em;*/
+    
+    top: 25.4vh;
     display: none;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.88);
@@ -480,8 +486,8 @@ Hiking trails list style
 }
 
 .ilbDrop-content {
-    left: 17.5em;
-    top: 26.8%;
+    left: 17.0em;
+    top: 29vh;
     display: none;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.88);
@@ -490,8 +496,8 @@ Hiking trails list style
 }
 
 .ssbDrop-content {
-    left: 17.5em;
-    top: 32.2%;
+    left: 17.0em;
+    top: 32.7vh;
     display: none;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.88);
@@ -500,8 +506,28 @@ Hiking trails list style
 }
 
 .ubtDrop-content {
-    left: 17.5em;
-    top: 21.8%;
+    left: 17.0em;
+    top: 36.3vh;
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.88);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.litoDrop-content {
+    left: 17.0em;
+    top: 49.0vh;
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.88);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.relevDrop-content {
+    left: 17.0em;
+    top: 51.1vh;
     display: none;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.88);
@@ -512,7 +538,9 @@ Hiking trails list style
 .carDrop-content a,
 .ilbDrop-content a,
 .ssbDrop-content a,
-.ubtDrop-content a {
+.ubtDrop-content a,
+.litoDrop-content a,
+.relevDrop-content a {
     -webkit-transition: all 0.8s;
     -moz-transition: all 0.8s;
     -ms-transition: all 0.8s;
@@ -528,7 +556,9 @@ Hiking trails list style
 .sel-carDrop-content a,
 .sel-ilbDrop-content a,
 .sel-ssbDrop-content a,
-.sel-ubtDrop-content a {
+.sel-ubtDrop-content a,
+.sel-litoDrop-content a,
+.sel-relevDrop-content a {
     /*    left: 17.5em;*/
     
     top: 26%;
@@ -545,7 +575,9 @@ Hiking trails list style
 .ilbDrop-content a:hover,
 .ssbDrop-content a:hover,
 .ubtDrop-content a:hover,
-.carDrop-content a:hover {
+.carDrop-content a:hover,
+.litoDrop-content a:hover,
+.relevDrop-content a:hover {
     background-color: rgba(38, 145, 93, 0.5);
 }
 

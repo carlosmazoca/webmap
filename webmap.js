@@ -55,6 +55,21 @@ function closeTrilha() {
 }
 
 
+// Remove hiking trails if clicked on municipality/city name
+function closeLayer() {
+    'use strict';
+    layers[0].setMap(null);
+    layers[1].setMap(null);
+    layers[2].setMap(null);
+    layers[3].setMap(null);
+    layers[4].setMap(null);
+    layers[5].setMap(null);
+    layers[6].setMap(null);
+    layers[7].setMap(null);
+    layers[8].setMap(null);
+}
+
+
 // Toggle layers (meio físico/environmental layers) onclick.
 // This function allows to deactivate an existing layer if a new one is selected
 function toggleLayer(i) {
@@ -66,6 +81,8 @@ function toggleLayer(i) {
     layers[4].setMap(null);
     layers[5].setMap(null);
     layers[6].setMap(null);
+    layers[7].setMap(null);
+    layers[8].setMap(null);
     layers[i].setMap(map);
 }
 
@@ -102,11 +119,21 @@ function initialize() {
             document.getElementById("ssbDrop").classList.remove("show");
             document.getElementById("carDrop").classList.remove("show");
             document.getElementById("ubtDrop").classList.toggle("show");
+        } else if ($(this).is("#REL")) {
+            document.getElementById("litoDrop").classList.remove("show");
+            document.getElementById("relevDrop").classList.toggle("show");
+        } else if ($(this).is("#GEL")) {
+            document.getElementById("relevDrop").classList.remove("show");
+            document.getElementById("litoDrop").classList.toggle("show");
         }
+
+
         //    else {
         //    document.getElementById("carDrop,ilbDrop").classList.remove("show");
         //    }
     });
+
+
 
 
     // Define button colors (meio físico/environmental layers) when clicked
@@ -144,6 +171,11 @@ function initialize() {
         $('selectedTRI').removeClass('selectedTRI');
         $(this).toggleClass('selectedTRI');
     });
+    // This function only applies to theme layers
+    $(".litoDrop-content a, .relevDrop-content a").click(function () {
+        $('selectedTRI').removeClass('selectedTRI');
+        $(this).toggleClass('selectedTRI');
+    });
     //// Função que realiza a mesma operação que a função acima
     //    $(".carDrop-content a").click(function () {
     //        $('selectedTRI').not(this).removeClass('selectedTRI');
@@ -159,7 +191,7 @@ function initialize() {
 
     // 1 Fusion Tables Layers (environmental layers)
 
-    //		Geologia CPRM
+    //  Geologia CPRM
     layers[0] = new google.maps.FusionTablesLayer({
         query: {
             select: "'col2>>0'",
@@ -170,33 +202,55 @@ function initialize() {
         templateId: 2
     });
 
-    // PRODUZIR		Geologia simplificada
+    //  Geologia simplificada
     layers[1] = new google.maps.FusionTablesLayer({
         query: {
             select: "'col2>>0'",
-            from: '1AsJHFs-WArBdqN7xXW_W_g4z13heBlBgZjWbwrw'
+            from: '1JG6UtomyfVDdMXbWQEIUY8vPKUIgCEqYc8mfYSAU'
         },
         map: map,
         styleId: 2,
         templateId: 2
     });
 
-    //PRODUZIR		Relevo ROSS 
+    //  Relevo ROSS Nivel 1
     layers[2] = new google.maps.FusionTablesLayer({
         query: {
             select: "'col2>>0'",
-            from: '1w3Sv5pv8x8R491auurusiiN8WhrxPTpx6jCqcaY'
+            from: '1bqQdy2H-E9S_7wbBxWirVE27k9NLeu9LgLUAmjOG'
         },
         map: map,
         styleId: 2,
         templateId: 2
     });
 
-    //PRODUZIR		Solos  Instituto Agronômico de Campinas
+    //		Relevo ROSS  Nivel 2
     layers[3] = new google.maps.FusionTablesLayer({
         query: {
             select: "'col2>>0'",
-            from: '1sJrW4LWFBgqHp5tqpKO09DwpPJwFoNxQpFOI14g'
+            from: '1ZkaEtrmTUNWl26Yo2lGkgvt71kXeyKWZCiKORT9R'
+        },
+        map: map,
+        styleId: 2,
+        templateId: 2
+    });
+
+    //		Relevo ROSS  Nivel 3
+    layers[4] = new google.maps.FusionTablesLayer({
+        query: {
+            select: "'col2>>0'",
+            from: '158LCqDWlnG4vJ7byE5feMbwcipK71zBqtYDDDkE2'
+        },
+        map: map,
+        styleId: 2,
+        templateId: 2
+    });
+    //    
+    //		Solos  Instituto Agronômico de Campinas
+    layers[5] = new google.maps.FusionTablesLayer({
+        query: {
+            select: "'col2>>0'",
+            from: '15C-wDP7dvMJ4ycIvtDzppNyBBNrEBifM0Sa1mvNN'
         },
         map: map,
         styleId: 2,
@@ -204,32 +258,32 @@ function initialize() {
     });
 
     //		Cavernas CPRM
-    layers[4] = new google.maps.FusionTablesLayer({
-        query: {
-            select: "'col2>>0'",
-            from: '1obXro-mpfvXe2P-fcTRtooMel434SQtpVKKjNTM'
-        },
-        map: map,
-        styleId: 2,
-        templateId: 2
-    });
-
-    //PRODUZIR		Vegetação IBGE ou Regiões Fitoecológicas RADAM
-    layers[5] = new google.maps.FusionTablesLayer({
-        query: {
-            select: "'col2>>0'",
-            from: ''
-        },
-        map: map,
-        styleId: 2,
-        templateId: 2
-    });
-
-    //PRODUZIR		Unidades de conservação
     layers[6] = new google.maps.FusionTablesLayer({
         query: {
             select: "'col2>>0'",
-            from: '1Rh2CWHxZh80b0oWske72P8gStshRwbec7cyZNI8'
+            from: '1HEAKMIRxmd24O4TFzySYxpFkU_mzJQhJgeTjI-Gh'
+        },
+        map: map,
+        styleId: 2,
+        templateId: 2
+    });
+
+    //		Vegetação IBGE ou Regiões Fitoecológicas RADAM
+    layers[7] = new google.maps.FusionTablesLayer({
+        query: {
+            select: "'col2>>0'",
+            from: '1mBdS_WkHSqsT0add-YRsyC2aKXvpPHbeSpjzML2F'
+        },
+        map: map,
+        styleId: 2,
+        templateId: 2
+    });
+
+    //		Unidades de conservação
+    layers[8] = new google.maps.FusionTablesLayer({
+        query: {
+            select: "'col2>>0'",
+            from: '1S9YKqiMjIQrHsTNMAnI0Ctk0FqVZN4kvW5-z5UNF'
         },
         map: map,
         styleId: 2,
@@ -238,20 +292,18 @@ function initialize() {
     });
 
     // Some layers definitions if necessary
-    layers[7] = new google.maps.FusionTablesLayer({});
-    layers[8] = new google.maps.FusionTablesLayer({});
     layers[9] = new google.maps.FusionTablesLayer({});
 
 
     // 2 KML layers (hiking trails)
 
     //crg_jqb	Trilha do Jequitibá    
-    layers[10] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/CRG_JQB.kml', {
+    layers[10] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/CRG_TJ.kml', {
         preserveViewport: false,
         map: map
     });
 
-    layers[11] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/CRG_JQB_PP.kml', {
+    layers[11] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/CRG_TJ_PP.kml', {
         preserveViewport: false,
         animation: google.maps.Animation.DROP,
         label: {
@@ -294,12 +346,12 @@ function initialize() {
     });
 
     //ILB_TB	Trilha do Bonete
-    layers[18] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/ILB_TB.kml', {
+    layers[18] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/ILB_TBN.kml', {
         preserveViewport: false,
         map: map
     });
 
-    layers[19] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/ILB_TB_PP.kml', {
+    layers[19] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/ILB_TBN_PP.kml', {
         preserveViewport: false,
         map: map
     });
@@ -316,12 +368,12 @@ function initialize() {
     });
 
     //SSB_JTR	Trilha do Jatobá Rizzieri
-    layers[22] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/SSB_JTR.kml', {
+    layers[22] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/SSB_TJR.kml', {
         preserveViewport: false,
         map: map
     });
 
-    layers[23] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/SSB_JTR_PP.kml', {
+    layers[23] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/SSB_TJR_PP.kml', {
         preserveViewport: false,
         map: map
     });

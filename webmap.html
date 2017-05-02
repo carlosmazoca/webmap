@@ -1,6 +1,3 @@
-<!--Organizar no HTML e no JS os códigos de acordo com as 3 trilhas por município que entrarão no lançamento-->
-
-
 <!DOCTYPE html>
 
 <html>
@@ -87,37 +84,55 @@
                 </div>
 
                 <a href='#'>
-                    <div class="grey" onclick="if (layers[0].getMap() !== null) {layers[0].setMap(null);}else{toggleLayer(0);}"> Geologia
+                    <div class="grey" id="GEL" onclick="if (layers[0].getMap() !== null) {layers[0].setMap(null);}else{toggleLayer(0);}"> Geologia
                         <br />
                     </div>
                 </a>
 
                 <a href='#'>
-                    <div class="white" onclick="if (layers[2].getMap() !== null) {layers[2].setMap(null);}else{toggleLayer(2);}"> Relevo
+                    <div class="white" id="REL" onclick="if (layers[1].getMap() !== null) {layers[1].setMap(null);}else{toggleLayer(1);}"> Geologia simplificada
                         <br />
                     </div>
                 </a>
 
                 <a href='#'>
-                    <div class="grey" onclick="if (layers[3].getMap() !== null) {layers[3].setMap(null);}else{toggleLayer(3);}"> Solos
+                    <div class="grey" id="REL" onclick="if (layers[2].getMap() !== null) {layers[2].setMap(null);}else{toggleLayer(2);}"> Relevo: 1. Morfoestruturas
                         <br />
                     </div>
                 </a>
 
                 <a href='#'>
-                    <div class="white" onclick="if (layers[4].getMap() !== null) {layers[4].setMap(null);}else{toggleLayer(4);}"> Cavernas
+                    <div class="white" id="REL" onclick="if (layers[3].getMap() !== null) {layers[3].setMap(null);}else{toggleLayer(3);}"> Relevo: 2. Morfoesculturas
                         <br />
                     </div>
                 </a>
 
                 <a href='#'>
-                    <div class="grey" onclick="if (layers[5].getMap() !== null) {layers[5].setMap(null);}else{toggleLayer(5);}"> Vegetação
+                    <div class="grey" id="REL" onclick="if (layers[4].getMap() !== null) {layers[4].setMap(null);}else{toggleLayer(4);}"> Relevo: 3. Unidades morfológicas
                         <br />
                     </div>
                 </a>
 
                 <a href='#'>
-                    <div class="white" onclick="if (layers[6].getMap() !== null) {layers[6].setMap(null);}else{toggleLayer(6);}"> Unidades de conservação
+                    <div class="white" id="SOL" onclick="if (layers[5].getMap() !== null) {layers[5].setMap(null);}else{toggleLayer(5);}"> Solos
+                        <br />
+                    </div>
+                </a>
+
+                <a href='#'>
+                    <div class="grey" id="CAV" onclick="if (layers[6].getMap() !== null) {layers[6].setMap(null);}else{toggleLayer(6);}"> Cavernas
+                        <br />
+                    </div>
+                </a>
+
+                <a href='#'>
+                    <div class="white" id="VEG" onclick="if (layers[7].getMap() !== null) {layers[7].setMap(null);}else{toggleLayer(7);}"> Vegetação
+                        <br />
+                    </div>
+                </a>
+
+                <a href='#'>
+                    <div class="grey" id="UCS" onclick="if (layers[8].getMap() !== null) {layers[8].setMap(null);}else{toggleLayer(8);}"> Unidades de conservação
                         <br />
                     </div>
                 </a>
@@ -145,51 +160,74 @@
 
 
 
+    <div id='content-conteiner'>
 
-    <div id="carDrop" class="carDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
+        <!--    Janelas para seleção de trilhas específicas.-->
+
+        <div id="carDrop" class="carDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
 Clique nos pontos para informação específica.">
-        <a href="#" onClick="toggleTrilha(21);toggleTrilha(22)">
+            <a href="#" onClick="toggleTrilha(11);toggleTrilha(10)">
 Trilha do Jequitibá</a>
-        <a href="#" onClick="toggleTrilha(23);toggleTrilha(24);">
+            <a href="#" onClick="toggleTrilha(13);toggleTrilha(12);">
 Trilha do Poção</a>
-        <a href="#">
+            <a href="#" onClick="toggleTrilha(15);toggleTrilha(14);">
 Trilha dos Tropeiros</a>
-    </div>
+        </div>
 
 
 
-    <div id="ilbDrop" class="ilbDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
+        <div id="ilbDrop" class="ilbDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
 Clique nos pontos para informação específica.">
-        <a href="#" onClick="toggleTrilha(39);">
+            <a href="#" onClick="toggleTrilha(17);toggleTrilha(16);">
 Trilha da Água Branca</a>
-        <a href="#" onClick="toggleTrilha(41);">
+            <a href="#" onClick="toggleTrilha(19);toggleTrilha(18);">
 Trilha do Bonete</a>
-        <a href="#" onClick="toggleTrilha(46);toggleTrilha(47);">
+            <a href="#" onClick="toggleTrilha(21);toggleTrilha(20);">
 Trilha do Pico do Baepí</a>
-    </div>
+        </div>
 
 
-    <div id="ssbDrop" class="ssbDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
+        <div id="ssbDrop" class="ssbDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
 Clique nos pontos para informação específica.">
-        <a href="#" onClick="toggleTrilha(64);">
+            <a href="#" onClick="toggleTrilha(23);toggleTrilha(22);">
 Trilha do Jatobá Rizzieri</a>
-        <a href="#" onClick="toggleTrilha(58);">
+            <a href="#" onClick="toggleTrilha(25);toggleTrilha(24);">
 Trilha da Praia Brava</a>
-        <a href="#" onClick="toggleTrilha(62);">
+            <a href="#" onClick="toggleTrilha(27);toggleTrilha(26);">
 Trilha do Sertão Camburi</a>
 
-    </div>
+        </div>
 
-    <div id="ubtDrop" class="ubtDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
+        <div id="ubtDrop" class="ubtDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
 Clique nos pontos para informação específica.">
-        <a href="#" onClick="toggleTrilha(79);toggleTrilha(78);">
+            <a href="#" onClick="toggleTrilha(29);toggleTrilha(28);">
 Trilha da Brava da Almada</a>
-        <a href="#" onClick="toggleTrilha(92);">
+            <a href="#" onClick="toggleTrilha(31);toggleTrilha(30);">
 Trilha do Pico do Corcovado</a>
-        <a href="#" onClick="toggleTrilha(96);">
+            <a href="#" onClick="toggleTrilha(33);toggleTrilha(32);">
 Trilha da Praia do Sul</a>
-    </div>
+        </div>
 
+        <!--    Janelas para seleção de temas específicos de litologia e relevo.    -->
+        <!--
+    <div id="litoDrop" class="litoDrop-content">
+        <a href="#" onclick="if (layers[0].getMap() !== null) {layers[0].setMap(null);}else{toggleLayer(0);}">
+Litologia</a>
+        <a href="#" onclick="if (layers[1].getMap() !== null) {layers[1].setMap(null);}else{toggleLayer(1);}">
+Litologia simplificada</a>
+    </div>        
+        
+    <div id="relevDrop" class="relevDrop-content">
+        <a href="#" onclick="if (layers[2].getMap() !== null) {layers[2].setMap(null);}else{toggleLayer(2);}">
+Litologia</a>
+        <a href="#" onclick="if (layers[3].getMap() !== null) {layers[3].setMap(null);}else{toggleLayer(3);}">
+Litologia simplificada</a>
+        <a href="#" onclick="if (layers[4].getMap() !== null) {layers[4].setMap(null);}else{toggleLayer(4);}">
+Litologia simplificada</a>        
+    </div>          
+-->
+
+    </div>
 
 </body>
 
