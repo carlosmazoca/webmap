@@ -218,7 +218,7 @@ The main part of the sidebar. Where selections by the user are made.
 #databox {
     position: relative;
     display: block;
-    top: 10%;
+    top: 3.5em;
     left: 0;
     /*    bottom: 0;*/
     
@@ -237,6 +237,7 @@ The main part of the sidebar. Where selections by the user are made.
 
 #databox_bottom {
     position: relative;
+    top: 1em;
     left: 0;
     width: 100%;
     <!--z-index: 15;
@@ -420,7 +421,7 @@ Style for the white/grey lines of selection in the databox
     /*        font-size: 2vh;*/
     
     font-size: 85%;
-    line-height: 250%;
+/*    line-height: 250%;*/
     margin: 0.125em 0 0.125em 0;
     border-color: white;
     left: 0;
@@ -474,48 +475,122 @@ Hiking trails list style
     position: relative;
 }
 
-.carDrop-content {
-    left: 17.0em;
-    /*    top: 15.5em;*/
-    
-    top: 25.4vh;
-    display: none;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.88);
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+@media (max-width: 1300px) {
+    .litoDrop-content {
+        left: 17.0em;
+        top: 25.8em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    .relDrop-content {
+        left: 17.0em;
+        top: 27.0em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    .carDrop-content {
+        left: 17.0em;
+        top: 10.2em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    .ilbDrop-content {
+        left: 17.0em;
+        top: 12.5em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    .ssbDrop-content {
+        left: 17.0em;
+        top: 14.7em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    .ubtDrop-content {
+        left: 17.0em;
+        top: 16.9em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
 }
 
-.ilbDrop-content {
-    left: 17.0em;
-    top: 29vh;
-    display: none;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.88);
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+@media (min-width: 1300px) {
+    .litoDrop-content {
+        left: 17.0em;
+        top: 28.5em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    .relDrop-content {
+        left: 17.0em;
+        top: 29.7em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    .carDrop-content {
+        left: 17.0em;
+        top: 12.9em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    .ilbDrop-content {
+        left: 17.0em;
+        top: 15.1em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    .ssbDrop-content {
+        left: 17.0em;
+        top: 17.4em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    .ubtDrop-content {
+        left: 17.0em;
+        top: 19.6em;
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.88);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
 }
 
-.ssbDrop-content {
-    left: 17.0em;
-    top: 32.7vh;
-    display: none;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.88);
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
-
-.ubtDrop-content {
-    left: 17.0em;
-    top: 36.3vh;
-    display: none;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.88);
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
-
+.litoDrop-content a,
+.relDrop-content a,
 .carDrop-content a,
 .ilbDrop-content a,
 .ssbDrop-content a,
@@ -530,6 +605,15 @@ Hiking trails list style
     text-decoration: none;
     display: block;
     line-height: 70%;
+}
+
+.litoDrop-content a,
+.relDrop-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    /*    line-height: 70%;*/
 }
 
 .sel-carDrop-content a,
@@ -548,6 +632,8 @@ Hiking trails list style
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
+.litoDrop-content a:hover,
+.relDrop-content a:hover,
 .carDrop-content a:hover,
 .ilbDrop-content a:hover,
 .ssbDrop-content a:hover,
@@ -573,8 +659,8 @@ Hiking trails list style
 
 .references {
     position: relative;
-    font-size: 75%;
-    top: 11%;
+    font-size: 70%;
+    top: 10%;
     padding-right: 3%;
     text-align: right;
     color: rgb(85, 85, 85);

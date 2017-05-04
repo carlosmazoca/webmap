@@ -83,56 +83,41 @@
                     </div>
                 </div>
 
+
                 <a href='#'>
-                    <div class="grey" id="GEL" onclick="if (layers[0].getMap() !== null) {layers[0].setMap(null);}else{toggleLayer(0);}"> Geologia
+                    <div class="grey" id="GEL" onclick="closeLayer()"> Geologia
+                        <br />
+                    </div>
+                </a>
+
+
+                <a href='#'>
+                    <div class="white" id="REL" onclick="closeLayer()"> Relevo
+                        <br />
+                    </div>
+                </a>
+
+
+                <a href='#'>
+                    <div class="grey" id="SOL" onclick="if (layers[5].getMap() !== null) {layers[5].setMap(null);}else{toggleLayer(5);}"> Solos
                         <br />
                     </div>
                 </a>
 
                 <a href='#'>
-                    <div class="white" id="REL" onclick="if (layers[1].getMap() !== null) {layers[1].setMap(null);}else{toggleLayer(1);}"> Geologia simplificada
+                    <div class="white" id="CAV" onclick="if (layers[6].getMap() !== null) {layers[6].setMap(null);}else{toggleLayer(6);}"> Cavernas
                         <br />
                     </div>
                 </a>
 
                 <a href='#'>
-                    <div class="grey" id="REL" onclick="if (layers[2].getMap() !== null) {layers[2].setMap(null);}else{toggleLayer(2);}"> Relevo: 1. Morfoestruturas
+                    <div class="grey" id="VEG" onclick="if (layers[7].getMap() !== null) {layers[7].setMap(null);}else{toggleLayer(7);}"> Vegetação
                         <br />
                     </div>
                 </a>
 
                 <a href='#'>
-                    <div class="white" id="REL" onclick="if (layers[3].getMap() !== null) {layers[3].setMap(null);}else{toggleLayer(3);}"> Relevo: 2. Morfoesculturas
-                        <br />
-                    </div>
-                </a>
-
-                <a href='#'>
-                    <div class="grey" id="REL" onclick="if (layers[4].getMap() !== null) {layers[4].setMap(null);}else{toggleLayer(4);}"> Relevo: 3. Unidades morfológicas
-                        <br />
-                    </div>
-                </a>
-
-                <a href='#'>
-                    <div class="white" id="SOL" onclick="if (layers[5].getMap() !== null) {layers[5].setMap(null);}else{toggleLayer(5);}"> Solos
-                        <br />
-                    </div>
-                </a>
-
-                <a href='#'>
-                    <div class="grey" id="CAV" onclick="if (layers[6].getMap() !== null) {layers[6].setMap(null);}else{toggleLayer(6);}"> Cavernas
-                        <br />
-                    </div>
-                </a>
-
-                <a href='#'>
-                    <div class="white" id="VEG" onclick="if (layers[7].getMap() !== null) {layers[7].setMap(null);}else{toggleLayer(7);}"> Vegetação
-                        <br />
-                    </div>
-                </a>
-
-                <a href='#'>
-                    <div class="grey" id="UCS" onclick="if (layers[8].getMap() !== null) {layers[8].setMap(null);}else{toggleLayer(8);}"> Unidades de conservação
+                    <div class="white" id="UCS" onclick="if (layers[8].getMap() !== null) {layers[8].setMap(null);}else{toggleLayer(8);}"> Unidades de conservação
                         <br />
                     </div>
                 </a>
@@ -208,6 +193,31 @@ Clique nos pontos para informação específica.">
             <a href="#" onClick="toggleTrilha(33);toggleTrilha(32);">
                 Trilha da Praia do Sul</a>
         </div>
+        
+        <div id="ubtDrop" class="ubtDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
+Clique nos pontos para informação específica.">
+            <a href="#" onClick="toggleTrilha(29);toggleTrilha(28);">
+                Trilha da Brava da Almada</a>
+            <a href="#" onClick="toggleTrilha(31);toggleTrilha(30);">
+                Trilha do Pico do Corcovado</a>
+            <a href="#" onClick="toggleTrilha(33);toggleTrilha(32);">
+                Trilha da Praia do Sul</a>
+        </div>
+
+        <div id="litoDrop" class="litoDrop-content">
+            <a href="#" class="grey" onclick="if (layers[0].getMap() !== null) {layers[0].setMap(null);}else{toggleLayer(0);}">
+                Geologia</a>
+            <a href="#" class="white" onclick="if (layers[1].getMap() !== null) {layers[1].setMap(null);}else{toggleLayer(1);}">
+                Geologia simplificada</a>
+        </div>
+
+        <div id="relDrop" class="relDrop-content">
+            <a href="#" class="grey" onclick="if (layers[2].getMap() !== null) {layers[2].setMap(null);}else{toggleLayer(2);}">
+            1. Morfoestruturas</a>
+            <a href="#" class="white" onclick="if (layers[3].getMap() !== null) {layers[3].setMap(null);}else{toggleLayer(3);}">
+            2. Morfoesculturas</a>
+            <a href="#" class="grey" onclick="if (layers[4].getMap() !== null) {layers[4].setMap(null);}else{toggleLayer(4);}">
+            3. Unidades morfológicas</a>
 
     </div>
 
