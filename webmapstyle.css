@@ -5,6 +5,7 @@
 /*
 Our green:#004221
 Our gold:#996600
+Our red: #900
 */
 
 html,
@@ -515,32 +516,10 @@ Hiking trails list style
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.litoDrop-content {
-    left: 17.0em;
-    top: 49.0vh;
-    display: none;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.88);
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
-
-.relevDrop-content {
-    left: 17.0em;
-    top: 51.1vh;
-    display: none;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.88);
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
-
 .carDrop-content a,
 .ilbDrop-content a,
 .ssbDrop-content a,
-.ubtDrop-content a,
-.litoDrop-content a,
-.relevDrop-content a {
+.ubtDrop-content a {
     -webkit-transition: all 0.8s;
     -moz-transition: all 0.8s;
     -ms-transition: all 0.8s;
@@ -556,9 +535,7 @@ Hiking trails list style
 .sel-carDrop-content a,
 .sel-ilbDrop-content a,
 .sel-ssbDrop-content a,
-.sel-ubtDrop-content a,
-.sel-litoDrop-content a,
-.sel-relevDrop-content a {
+.sel-ubtDrop-content a {
     /*    left: 17.5em;*/
     
     top: 26%;
@@ -575,9 +552,7 @@ Hiking trails list style
 .ilbDrop-content a:hover,
 .ssbDrop-content a:hover,
 .ubtDrop-content a:hover,
-.carDrop-content a:hover,
-.litoDrop-content a:hover,
-.relevDrop-content a:hover {
+.carDrop-content a:hover {
     background-color: rgba(38, 145, 93, 0.5);
 }
 
@@ -590,3 +565,27 @@ a:visited {
     color: inherit;
     text-decoration: none;
 }
+/*
+--------------------------------------------------------------------------
+Hiking trails list style
+--------------------------------------------------------------------------
+*/
+
+.references {
+    position: relative;
+    font-size: 75%;
+    top: 11%;
+    padding-right: 3%;
+    text-align: right;
+    color: rgb(85, 85, 85);
+    z-index: 30;
+}
+
+.references:hover {
+    color: #996600;
+}
+/*
+Our green:#004221
+Our gold:#996600
+Our red: #900
+*/

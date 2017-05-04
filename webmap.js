@@ -55,19 +55,19 @@ function closeTrilha() {
 }
 
 
-// Remove hiking trails if clicked on municipality/city name
-function closeLayer() {
-    'use strict';
-    layers[0].setMap(null);
-    layers[1].setMap(null);
-    layers[2].setMap(null);
-    layers[3].setMap(null);
-    layers[4].setMap(null);
-    layers[5].setMap(null);
-    layers[6].setMap(null);
-    layers[7].setMap(null);
-    layers[8].setMap(null);
-}
+//// Remove hiking trails if clicked on municipality/city name
+//function closeLayer() {
+//    'use strict';
+//    layers[0].setMap(null);
+//    layers[1].setMap(null);
+//    layers[2].setMap(null);
+//    layers[3].setMap(null);
+//    layers[4].setMap(null);
+//    layers[5].setMap(null);
+//    layers[6].setMap(null);
+//    layers[7].setMap(null);
+//    layers[8].setMap(null);
+//}
 
 
 // Toggle layers (meio físico/environmental layers) onclick.
@@ -119,12 +119,6 @@ function initialize() {
             document.getElementById("ssbDrop").classList.remove("show");
             document.getElementById("carDrop").classList.remove("show");
             document.getElementById("ubtDrop").classList.toggle("show");
-        } else if ($(this).is("#REL")) {
-            document.getElementById("litoDrop").classList.remove("show");
-            document.getElementById("relevDrop").classList.toggle("show");
-        } else if ($(this).is("#GEL")) {
-            document.getElementById("relevDrop").classList.remove("show");
-            document.getElementById("litoDrop").classList.toggle("show");
         }
 
 
@@ -171,11 +165,6 @@ function initialize() {
         $('selectedTRI').removeClass('selectedTRI');
         $(this).toggleClass('selectedTRI');
     });
-    // This function only applies to theme layers
-    $(".litoDrop-content a, .relevDrop-content a").click(function () {
-        $('selectedTRI').removeClass('selectedTRI');
-        $(this).toggleClass('selectedTRI');
-    });
     //// Função que realiza a mesma operação que a função acima
     //    $(".carDrop-content a").click(function () {
     //        $('selectedTRI').not(this).removeClass('selectedTRI');
@@ -195,7 +184,7 @@ function initialize() {
     layers[0] = new google.maps.FusionTablesLayer({
         query: {
             select: "'col2>>0'",
-            from: '1AsJHFs-WArBdqN7xXW_W_g4z13heBlBgZjWbwrw'
+            from: '1jnWaAgiUjkbqcA6vCt7Udml66RtPDR_cO6K_dtt6'
         },
         map: map,
         styleId: 2,
