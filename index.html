@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<!--Code by Carlos Mazoca, Geoscientist and Jack of all trades-->
+
 <html>
 
 <head>
@@ -44,26 +46,26 @@
 
                 </div>
 
-                <a href='#'>
+                <a href="#">
                     <div class="greyTRI" id="CAR" onclick="closeTrilha()">
                         Caraguatatuba
 
                     </div>
                 </a>
 
-                <a href='#'>
+                <a href="#">
                     <div class="whiteTRI" id="ILB" onclick="closeTrilha()">
                         Ilhabela
                     </div>
                 </a>
 
-                <a href='#'>
+                <a href="#">
                     <div class="greyTRI" id="SSB" onclick="closeTrilha()">
                         São Sebastião
                     </div>
                 </a>
 
-                <a href='#'>
+                <a href="#">
                     <div class="whiteTRI" id="UBT" onclick="closeTrilha()">
                         Ubatuba
                     </div>
@@ -84,41 +86,41 @@
                 </div>
 
 
-                <a href='#'>
+                <a href="#">
                     <div class="grey" id="GEL" onclick="closeLayer()"> Geologia
-                        <br />
+
                     </div>
                 </a>
 
 
-                <a href='#'>
+                <a href="#">
                     <div class="white" id="REL" onclick="closeLayer()"> Relevo
-                        <br />
+
                     </div>
                 </a>
 
 
-                <a href='#'>
+                <a href="#">
                     <div class="grey" id="SOL" onclick="if (layers[5].getMap() !== null) {layers[5].setMap(null);}else{toggleLayer(5);}"> Solos
-                        <br />
+
                     </div>
                 </a>
 
-                <a href='#'>
+                <a href="#">
                     <div class="white" id="CAV" onclick="if (layers[6].getMap() !== null) {layers[6].setMap(null);}else{toggleLayer(6);}"> Cavernas
-                        <br />
+
                     </div>
                 </a>
 
-                <a href='#'>
+                <a href="#">
                     <div class="grey" id="VEG" onclick="if (layers[7].getMap() !== null) {layers[7].setMap(null);}else{toggleLayer(7);}"> Vegetação
-                        <br />
+
                     </div>
                 </a>
 
-                <a href='#'>
+                <a href="#">
                     <div class="white" id="UCS" onclick="if (layers[8].getMap() !== null) {layers[8].setMap(null);}else{toggleLayer(8);}"> Unidades de conservação
-                        <br />
+
                     </div>
                 </a>
 
@@ -147,17 +149,17 @@
 
 
 
-    <div id='content-conteiner'>
+    <div id="content-conteiner">
 
         <!--    Janelas para seleção de trilhas específicas.-->
 
         <div id="carDrop" class="carDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
 Clique nos pontos para informação específica.">
-            <a href="#" onClick="toggleTrilha(11);toggleTrilha(10)">
+            <a href="#" onclick="toggleTrilha(11);toggleTrilha(10)">
                 Trilha do Jequitibá</a>
-            <a href="#" onClick="toggleTrilha(13);toggleTrilha(12);">
+            <a href="#" onclick="toggleTrilha(13);toggleTrilha(12);">
                 Trilha do Poção</a>
-            <a href="#" onClick="toggleTrilha(15);toggleTrilha(14);">
+            <a href="#" onclick="toggleTrilha(15);toggleTrilha(14);">
                 Trilha dos Tropeiros</a>
         </div>
 
@@ -165,43 +167,33 @@ Clique nos pontos para informação específica.">
 
         <div id="ilbDrop" class="ilbDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
 Clique nos pontos para informação específica.">
-            <a href="#" onClick="toggleTrilha(17);toggleTrilha(16);">
+            <a href="#" onclick="toggleTrilha(17);toggleTrilha(16);">
                 Trilha da Água Branca</a>
-            <a href="#" onClick="toggleTrilha(19);toggleTrilha(18);">
+            <a href="#" onclick="toggleTrilha(19);toggleTrilha(18);">
                 Trilha do Bonete</a>
-            <a href="#" onClick="toggleTrilha(21);toggleTrilha(20);">
+            <a href="#" onclick="toggleTrilha(21);toggleTrilha(20);">
                 Trilha do Pico do Baepí</a>
         </div>
 
 
         <div id="ssbDrop" class="ssbDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
 Clique nos pontos para informação específica.">
-            <a href="#" onClick="toggleTrilha(23);toggleTrilha(22);">
+            <a href="#" onclick="toggleTrilha(23);toggleTrilha(22);">
                 Trilha do Jatobá Rizzieri</a>
-            <a href="#" onClick="toggleTrilha(25);toggleTrilha(24);">
+            <a href="#" onclick="toggleTrilha(25);toggleTrilha(24);">
                 Trilha da Praia Brava</a>
-            <a href="#" onClick="toggleTrilha(27);toggleTrilha(26);">
+            <a href="#" onclick="toggleTrilha(27);toggleTrilha(26);">
                 Trilha do Sertão Camburi</a>
 
         </div>
 
         <div id="ubtDrop" class="ubtDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
 Clique nos pontos para informação específica.">
-            <a href="#" onClick="toggleTrilha(29);toggleTrilha(28);">
+            <a href="#" onclick="toggleTrilha(29);toggleTrilha(28);">
                 Trilha da Brava da Almada</a>
-            <a href="#" onClick="toggleTrilha(31);toggleTrilha(30);">
+            <a href="#" onclick="toggleTrilha(31);toggleTrilha(30);">
                 Trilha do Pico do Corcovado</a>
-            <a href="#" onClick="toggleTrilha(33);toggleTrilha(32);">
-                Trilha da Praia do Sul</a>
-        </div>
-
-        <div id="ubtDrop" class="ubtDrop-content" title="Clique no trajeto para informações gerais sobre a trilha.
-Clique nos pontos para informação específica.">
-            <a href="#" onClick="toggleTrilha(29);toggleTrilha(28);">
-                Trilha da Brava da Almada</a>
-            <a href="#" onClick="toggleTrilha(31);toggleTrilha(30);">
-                Trilha do Pico do Corcovado</a>
-            <a href="#" onClick="toggleTrilha(33);toggleTrilha(32);">
+            <a href="#" onclick="toggleTrilha(33);toggleTrilha(32);">
                 Trilha da Praia do Sul</a>
         </div>
 
@@ -221,6 +213,7 @@ Clique nos pontos para informação específica.">
             3. Unidades morfológicas</a>
 
         </div>
+    </div>
 
 </body>
 

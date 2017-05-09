@@ -1,7 +1,10 @@
 @charset "UTF-8";
+
+
 /* CSS Document */
-/* Webmap Style */
 /* Code by Carlos Mazoca, Geoscientist and Jack of all trades */
+
+
 /*
 Our green:#004221
 Our gold:#996600
@@ -23,7 +26,6 @@ a {
 #wrapper {
     /*    position: absolute;*/
     /*    max-width: 75em;*/
-    
     top: 0;
     bottom: 0;
     right: 0;
@@ -41,9 +43,10 @@ a {
     bottom: 0;
     height: 100%;
     overflow: hidden;
-    <!--z-index: 1;
-    -->
+/*    z-index: 1;*/
 }
+
+
 /*I'm having some serious issues regarding elasticity/fluidity of the elements in the sidebar. HAVE TO FIX IT.*/
 
 #sidebar {
@@ -58,9 +61,7 @@ a {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAN0lEQVQoU2P88OHDfwEBAUYGHAAkD5bEpRAmDjcBXSEyH8UamAS6Bgy3YLOaNJMIuomg74gJJwD/DUOoKcg2JQAAAABJRU5ErkJggg==
 ) repeat;
     /*O plano de fundo do tipo diagonal check pode ser feito também com svg inline, também não será preciso chamar uma imagem.*/
-    
-    <!--z-index: 5;
-    -->
+    z-index: 5;
 }
 
 @media (min-device-width: 1025px) and (max-device-width: 1600px) {
@@ -72,8 +73,7 @@ a {
         height: 15vh;
         border-top: 6px #004221 solid;
         border-bottom: 3px #004221 solid;
-        <!--z-index: 10;
-        -->
+/*        z-index: 10;*/
     }
     .headertitle {
         position: absolute;
@@ -113,30 +113,26 @@ The main part of the sidebar. Where selections by the user are made.
 --------------------------------------------------------------------------
 */
     /*Probably I'll have to divide this part*/
-    
     #databox {
         position: relative;
         display: block;
         top: 2.1em;
         left: 0;
         width: 100%;
-        <!--z-index: 10;
-        -->
+/*        z-index: 10;*/
     }
     #databox_upper {
         position: relative;
         left: 0;
         width: 100%;
-        <!--z-index: 15;
-        -->
+/*        z-index: 15;*/
     }
     #databox_bottom {
         position: relative;
         top: -0.5em;
         left: 0;
         width: 100%;
-        <!--z-index: 15;
-        -->
+/*        z-index: 15;*/
     }
     .title {
         position: relative;
@@ -173,23 +169,19 @@ The main part of the sidebar. Where selections by the user are made.
         left: 10%;
         max-width: 65%;
         /*    height: 15%;*/
-        
         height: 15vh;
         border-top: 6px #004221 solid;
         border-bottom: 3px #004221 solid;
-        <!--z-index: 10;
-        -->
+/*        z-index: 10;*/
     }
     .headertitle {
         position: absolute;
         top: 10%;
         /*    max-width: 100%;*/
-        
         color: black;
         font-weight: bold;
         /*    font-size: 1.8em;*/
         /*    font-size: 3vh;*/
-        
         font-size: 150%;
         letter-spacing: 0.0625em;
         font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
@@ -199,13 +191,11 @@ The main part of the sidebar. Where selections by the user are made.
         position: absolute;
         top: 33%;
         /*    max-width: 100%;*/
-        
         left: 10%;
         color: black;
         font-weight: bold;
         /*    font-size: 1.5em;*/
         /*    font-size: 2.5vh;*/
-        
         font-size: 120%;
         letter-spacing: 0.0625em;
         font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
@@ -215,12 +205,10 @@ The main part of the sidebar. Where selections by the user are made.
         position: absolute;
         bottom: 5%;
         /*    max-width: 100%;*/
-        
         color: #996600;
         font-weight: bold;
         /*    font-size: 0.875em;*/
         /*    font-size: 1.6vh;*/
-        
         font-size: 72%;
         font-family: "Helvetica", "Verdana", "Geneva", sans-serif;
     }
@@ -235,32 +223,30 @@ The main part of the sidebar. Where selections by the user are made.
 --------------------------------------------------------------------------
 */
     /*Probably I'll have to divide this part*/
-    
     #databox {
         position: relative;
         display: block;
         top: 3.5em;
         left: 0;
         /*    bottom: 0;*/
-        
         width: 100%;
-        <!--z-index: 10;
-        -->
+        z-index: 10;
+        
     }
     #databox_upper {
         position: relative;
         left: 0;
         width: 100%;
-        <!--z-index: 15;
-        -->
+        z-index: 15;
+        
     }
     #databox_bottom {
         position: relative;
         top: 1em;
         left: 0;
         width: 100%;
-        <!--z-index: 15;
-        -->
+        z-index: 15;
+        
     }
     .title {
         position: relative;
@@ -269,13 +255,11 @@ The main part of the sidebar. Where selections by the user are made.
         color: black;
         /*    font-size: 1em;*/
         /*    font-size: 2vh;*/
-        
         font-size: 90%;
         font-family: "Helvetica", "Verdana", "Geneva", sans-serif;
         letter-spacing: 0.0625em;
         line-height: 250%;
         /*padding-left: 0.3125em;*/
-        
         top: 0;
         left: 10%;
         text-shadow: 0 0 10px #b4b4b4;
@@ -294,6 +278,8 @@ The main part of the sidebar. Where selections by the user are made.
         color: #996600;
     }
 }
+
+
 /*
 --------------------------------------------------------------------------
 Svg animation in the GeoHereditas name on the bottom of the sidebar:
@@ -327,11 +313,10 @@ Svg animation in the GeoHereditas name on the bottom of the sidebar:
     color: black;
     /*    font-size: 0.8125em;*/
     /*        font-size: 1.4vh;*/
-    
     font-size: 70%;
     letter-spacing: 0.0625em;
     font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
-    /*    <!--z-index: 10;-->*/
+    /*    z-index: 10;*/
 }
 
 @keyframes draw {
@@ -355,6 +340,8 @@ Svg animation in the GeoHereditas name on the bottom of the sidebar:
 .about:hover {
     color: #996600;
 }
+
+
 /*
 --------------------------------------------------------------------------
 Tooltips texts
@@ -375,17 +362,17 @@ Tooltips texts
     padding: 4px;
     border-radius: 2px;
     /* Position the tooltip text */
-    
     position: absolute;
     z-index: 1;
     bottom: 80%;
     left: 1%;
     /* Fade in tooltip */
-    
     text-shadow: none;
     opacity: 0;
     transition: opacity 2s;
 }
+
+
 /*Circle to call the tooltip*/
 
 .help-tip {
@@ -398,6 +385,8 @@ Tooltips texts
     line-height: 17px;
     cursor: default;
 }
+
+
 /*Question mark on the circle*/
 
 .help-tip:before {
@@ -405,6 +394,8 @@ Tooltips texts
     font-weight: bold;
     color: rgb(0, 0, 0);
 }
+
+
 /* Show the tooltip text when you mouse over the tooltip container */
 
 .help-tip:hover .tooltiptext {
@@ -419,6 +410,8 @@ Tooltips texts
 .help-tip:hover:before {
     color: #fff;
 }
+
+
 /*
 --------------------------------------------------------------------------
 Close button at the city names
@@ -435,6 +428,8 @@ Close button at the city names
     left: 88%;
     z-index: 35;
 }
+
+
 /*
 --------------------------------------------------------------------------
 Style for the white/grey lines of selection in the databox
@@ -448,7 +443,6 @@ Style for the white/grey lines of selection in the databox
     color: #282828;
     /*  font-size: 0.875em;*/
     /*  font-size: 2vh;*/
-    
     font-size: 85%;
     line-height: 250%;
     padding-left: 10%;
@@ -468,7 +462,6 @@ Style for the white/grey lines of selection in the databox
     color: #282828;
     /*  font-size: 0.875em;*/
     /*  font-size: 2vh;*/
-    
     font-size: 85%;
     line-height: 250%;
     padding-left: 10%;
@@ -491,7 +484,6 @@ Style for the white/grey lines of selection in the databox
     /*  font-weight: bold;*/
     /*  font-size: 0.875em;*/
     /*  font-size: 2vh;*/
-    
     font-size: 85%;
     margin: 0.125em 0 0.125em 0;
     border-color: white;
@@ -525,7 +517,6 @@ Style for the white/grey lines of selection in the databox
     font-weight: bold;
     /*    font-size: 0.875em;*/
     /*    line-height: 250%;*/
-    
     border-color: white;
     left: 0;
     right: 0;
@@ -533,6 +524,8 @@ Style for the white/grey lines of selection in the databox
     box-shadow: inset -0.3em 0 0 0 #004221;
     z-index: 30;
 }
+
+
 /*
 --------------------------------------------------------------------------
 Hiking trails list style
@@ -542,14 +535,24 @@ Hiking trails list style
 #content-conteiner {
     position: relative;
 }
+
+
 /*Smartphones*/
+
+
 /*
 @media screen (max-device-width: 640px) {}
 */
+
+
 /*Tablets*/
+
+
 /*
 @media (min-device-width: 641px) and (min-device-width: 1024px) {}
 */
+
+
 /*Laptops*/
 
 @media (min-device-width: 1025px) and (max-device-width: 1600px) {
@@ -560,7 +563,7 @@ Hiking trails list style
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
         min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
     .relDrop-content {
         left: 17.0em;
@@ -568,8 +571,8 @@ Hiking trails list style
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
-        min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        min-width: 215px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
     .carDrop-content {
         left: 17.0em;
@@ -578,7 +581,7 @@ Hiking trails list style
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
         min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
     .ilbDrop-content {
         left: 17.0em;
@@ -587,7 +590,7 @@ Hiking trails list style
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
         min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
     .ssbDrop-content {
         left: 17.0em;
@@ -596,7 +599,7 @@ Hiking trails list style
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
         min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
     .ubtDrop-content {
         left: 17.0em;
@@ -605,9 +608,11 @@ Hiking trails list style
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
         min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 }
+
+
 /*iMacs and TVs*/
 
 @media (min-device-width: 1601px) {
@@ -618,7 +623,7 @@ Hiking trails list style
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
         min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
     .relDrop-content {
         left: 17.0em;
@@ -626,8 +631,8 @@ Hiking trails list style
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
-        min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        min-width: 215px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
     .carDrop-content {
         left: 17.0em;
@@ -636,7 +641,7 @@ Hiking trails list style
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
         min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
     .ilbDrop-content {
         left: 17.0em;
@@ -645,7 +650,7 @@ Hiking trails list style
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
         min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
     .ssbDrop-content {
         left: 17.0em;
@@ -654,7 +659,7 @@ Hiking trails list style
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
         min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
     .ubtDrop-content {
         left: 17.0em;
@@ -663,7 +668,7 @@ Hiking trails list style
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
         min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 }
 
@@ -699,7 +704,6 @@ Hiking trails list style
 .sel-ssbDrop-content a,
 .sel-ubtDrop-content a {
     /*    left: 17.5em;*/
-    
     top: 26%;
     display: none;
     position: absolute;
@@ -707,7 +711,7 @@ Hiking trails list style
     font-weight: bold;
     background-color: rgba(38, 145, 93, 0.35);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .litoDrop-content a:hover,

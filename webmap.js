@@ -97,6 +97,39 @@ function initialize() {
     });
 
 
+    // Set new locations on city name click. This will be used in the JQuery function
+    function newLocation(newLat, newLng) {
+        map.setCenter({
+            lat: newLat,
+            lng: newLng
+        });
+    }
+
+
+    //Set new locations and zoom level on city name click
+    $(document).ready(function () {
+        $("#CAR").on('click', function () {
+            newLocation(-23.6386442, -45.4337792);
+            map.setZoom(11);
+        });
+
+        $("#ILB").on('click', function () {
+            newLocation(-23.8353659, -45.3224381);
+            map.setZoom(12);
+        });
+
+        $("#SSB").on('click', function () {
+            newLocation(-23.7691073, -45.6138593);
+            map.setZoom(11);
+        });
+
+        $("#UBT").on('click', function () {
+            newLocation(-23.3975304, -45.0342757);
+            map.setZoom(11);
+        });
+    });
+
+
     // Activate/Deactive conteiner of hiking trail for each municipality/city
     $('.whiteTRI,.greyTRI').on('click', function () {
         if ($(this).is("#CAR")) {
@@ -120,14 +153,9 @@ function initialize() {
             document.getElementById("carDrop").classList.remove("show");
             document.getElementById("ubtDrop").classList.toggle("show");
         }
-
-
-        //    else {
-        //    document.getElementById("carDrop,ilbDrop").classList.remove("show");
-        //    }
     });
 
-    
+
     // Activate/Deactive conteiner of theme layers
     $('.white,.grey').on('click', function () {
         if ($(this).is("#GEL")) {
@@ -140,9 +168,6 @@ function initialize() {
             document.getElementById("litoDrop").classList.remove("show");
             document.getElementById("relDrop").classList.remove("show");
         }
-        //    else {
-        //    document.getElementById("carDrop,ilbDrop").classList.remove("show");
-        //    }
     });
 
 
@@ -152,6 +177,7 @@ function initialize() {
         $('.white,.grey').on('click', function () {
             var isActive = ($(this).hasClass('selected')) ? true : false; // checks if it is already active
             $('.selected').removeClass('selected');
+
             if (!isActive) {
                 $(this).addClass('selected');
             } // set active only if it was not active
