@@ -555,7 +555,8 @@ Hiking trails list style
 
 /*Laptops*/
 
-@media (min-device-width: 1025px) and (max-device-width: 1600px) {
+/*@media (min-device-width: 1025px) and (max-device-width: 1600px) {*/
+@media (max-device-width: 1600px) {    
     .litoDrop-content {
         left: 17.0em;
         top: 22.6em;
