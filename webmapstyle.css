@@ -474,6 +474,45 @@ Style for the white/grey lines of selection in the databox
     z-index: 30;
 }
 
+
+.whiteinner {
+    position: relative;
+    text-align: left;
+    color: #282828;
+    /*  font-size: 0.875em;*/
+    /*  font-size: 2vh;*/
+    font-size: 85%;
+    line-height: 250%;
+    padding-left: 5%;
+    margin: 0.125em 0 0.125em 0;
+    border-color: white;
+/*
+    left: 0;
+    right: 0;
+*/
+/*    height: 250%;*/
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 30;
+}
+
+.greyinner {
+    position: relative;
+    text-align: left;
+    color: #282828;
+    /*      font-size: 0.875em;*/
+    /*      font-size: 2vh;*/
+    font-size: 85%;
+        line-height: 250%;
+    padding-left: 5%;
+    margin: 0.125em 0 0.125em 0;
+
+    /*    margin: 0.125em 0 0.125em 0;*/
+    border-color: white;
+    /*    height: 250%;*/
+    background-color: rgba(234, 234, 234, 0.7);
+    z-index: 30;
+}
+
 .whiteTRI:hover,
 .greyTRI:hover,
 .white:hover,

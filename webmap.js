@@ -170,16 +170,32 @@ function initialize() {
         }
     });
 
-
-    // Define button colors (meio físico/environmental layers) when clicked
+//
+//    // Define button colors (meio físico/environmental layers) when clicked
+//    // This function only applies to the environmental layers
+//    $(document).ready(function () {
+//        $('.white,.grey').on('click', function () {
+//            var isActive = ($(this).hasClass('selected')) ? true : false; // checks if it is already active
+//            $('.selected').removeClass('selected');
+//
+//            if (!isActive) {
+//                $(this).addClass('selected');
+//            } // set active only if it was not active
+//        });
+//    });
+    
+    
+        // Define button colors (meio físico/environmental layers) when clicked
     // This function only applies to the environmental layers
     $(document).ready(function () {
         $('.white,.grey').on('click', function () {
             var isActive = ($(this).hasClass('selected')) ? true : false; // checks if it is already active
             $('.selected').removeClass('selected');
+            $('.close').removeClass('close');
 
             if (!isActive) {
                 $(this).addClass('selected');
+                $(this).addClass('close');
             } // set active only if it was not active
         });
     });

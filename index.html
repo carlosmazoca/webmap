@@ -196,6 +196,7 @@ Clique nos pontos para informação específica.">
                 Trilha da Praia do Sul</a>
         </div>
 
+<!--
         <div id="litoDrop" class="litoDrop-content">
             <a href="#" class="grey" onclick="if (layers[0].getMap() !== null) {layers[0].setMap(null);}else{toggleLayer(0);}">
                 Geologia</a>
@@ -212,6 +213,37 @@ Clique nos pontos para informação específica.">
             3. Unidades morfológicas</a>
 
         </div>
+-->
+        
+        
+        
+                <div id="litoDrop" class="litoDrop-content">
+            <div class="greyinner">
+                <input type="radio" id="r1" name="radio-group" onclick="toggleLayer(0);"> Geologia
+            </div>
+
+            <div class="whiteinner">
+                <input type="radio" id="r2" name="radio-group" onclick="toggleLayer(1);"> Geologia simplificada
+            </div>
+        </div>
+
+
+        <div id="relDrop" class="relDrop-content">
+            <div class="greyinner">
+                <input type="radio" id="r3" name="radio-group" onclick="toggleLayer(2);"> 1. Morfoestruturas
+            </div>
+
+            <div class="whiteinner">
+                <input type="radio" id="r4" name="radio-group" onclick="toggleLayer(3);"> 2. Morfoesculturas
+            </div>
+
+            <div class="greyinner">
+                <input type="radio" id="r5" name="radio-group" onclick="toggleLayer(4);"> 3. Unidades morfológicas
+            </div>
+        </div>
+        
+        
+        
     </div>
 
 </body>
