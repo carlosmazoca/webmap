@@ -598,7 +598,7 @@ Hiking trails list style
 @media (max-device-width: 1600px) {    
     .litoDrop-content {
         left: 17.0em;
-        top: 22.6em;
+        top: 22.8em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
@@ -607,7 +607,7 @@ Hiking trails list style
     }
     .relDrop-content {
         left: 17.0em;
-        top: 23.7em;
+        top: 24.0em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
@@ -616,7 +616,7 @@ Hiking trails list style
     }
     .carDrop-content {
         left: 17.0em;
-        top: 8.6em;
+        top: 8.8em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
@@ -625,7 +625,7 @@ Hiking trails list style
     }
     .ilbDrop-content {
         left: 17.0em;
-        top: 10.8em;
+        top: 11em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
@@ -634,7 +634,7 @@ Hiking trails list style
     }
     .ssbDrop-content {
         left: 17.0em;
-        top: 13.0em;
+        top: 13.3em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
@@ -643,7 +643,7 @@ Hiking trails list style
     }
     .ubtDrop-content {
         left: 17.0em;
-        top: 15.3em;
+        top: 15.5em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
