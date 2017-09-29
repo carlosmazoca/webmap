@@ -658,7 +658,7 @@ Hiking trails list style
 @media (min-device-width: 1601px) {
     .litoDrop-content {
         left: 17.0em;
-        top: 28.5em;
+        top: 27.9em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
@@ -667,7 +667,7 @@ Hiking trails list style
     }
     .relDrop-content {
         left: 17.0em;
-        top: 29.7em;
+        top: 29.0em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
@@ -676,7 +676,7 @@ Hiking trails list style
     }
     .carDrop-content {
         left: 17.0em;
-        top: 12.9em;
+        top: 12.4em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
@@ -685,7 +685,7 @@ Hiking trails list style
     }
     .ilbDrop-content {
         left: 17.0em;
-        top: 15.1em;
+        top: 14.6em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
@@ -694,7 +694,7 @@ Hiking trails list style
     }
     .ssbDrop-content {
         left: 17.0em;
-        top: 17.4em;
+        top: 16.8em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
@@ -703,7 +703,7 @@ Hiking trails list style
     }
     .ubtDrop-content {
         left: 17.0em;
-        top: 19.6em;
+        top: 19.1em;
         display: none;
         position: absolute;
         background-color: rgba(255, 255, 255, 0.88);
@@ -772,4 +772,208 @@ a:link,
 a:visited {
     color: inherit;
     text-decoration: none;
+}
+
+
+
+/*
+--------------------------------------------------------------------------
+Modal Window
+--------------------------------------------------------------------------
+*/
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    animation: animatedBackground 4s linear;
+}
+
+@keyframes animatedBackground {
+    0% {
+        background: rgba(0, 0, 0, 0.9);
+    }
+    /*
+50% {
+background: rgba(0, 0, 0, 0.88);
+}
+*/
+    100% {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+
+
+.modalcontent {
+    position: absolute;
+    font-family: "Open Sans", "Helvetica", sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    /*    border-radius: 1%;*/
+    /*    -webkit-border-radius: 1%;*/
+    /*    -moz-border-radius: 1%;*/
+    width: 40em;
+    height: 50.5%;
+    padding: 0;
+        box-shadow: 0 0 20px 1px rgba(111, 111, 111, 0.5);
+/*    box-shadow: 0 0 20px 4px rgb(0, 0, 0);*/
+    -webkit-animation: background-anim-slow 1s linear;
+}
+
+@keyframes background-anim-slow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.modcont1 {
+    position: fixed;
+    text-align: center;
+    letter-spacing: 0.02em;
+    background-image: linear-gradient( rgba(0, 15, 66, 0.43),
+    rgba(0, 5, 66, 0.78)), url(http://www.igc.usp.br/fileadmin/files/geohereditas/Fotos/BR101_MorroStoAntonio_red.jpg);
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    font-size: 150%;
+    width: 100%;
+    height: 53%;
+}
+
+
+.modcont2 {
+    text-align: center;
+    position: relative;
+    color: #505050;
+    vertical-align: top;
+}
+
+
+.modcont2 a:hover {
+    color: #060239;
+    text-shadow: 0 0 0.9em rgba(6, 6, 6, 0.31);
+}
+
+
+.img-circular1,
+.img-circular2,
+.img-circular3 {
+    width: 9em;
+    height: 9em;
+    background-size: cover;
+    display: inline-block;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    position: relative;
+    margin: 12em 1.5em 0.5em 1.5em;
+
+    /*    blur*/
+    /*
+-webkit-filter: blur(0.1em);
+filter: blur(0.1em);
+*/
+    /*    grayscale*/
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    /*to avoid the ~1px shift in transitions*/
+}
+
+.img-circular1 {
+    background-image: url('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_photo/CRG_TP_03.jpg');
+}
+
+.img-circular2 {
+    position: relative;
+    top: 1.5em;
+    background-image: url('http://www.igc.usp.br/fileadmin/files/geohereditas/paineis_interpretativos/figpaineis/tb_07-cebimar.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img-circular3 {
+    background-image: url('http://www.igc.usp.br/fileadmin/files/geohereditas/sp_inventory/4.6.5.1.jpg');
+}
+
+
+
+.img-circular1:hover,
+.img-circular2:hover {
+    /*    grayscale*/
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+
+    /*    zoom out*/
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+
+    box-shadow: 0 0 15px 1px rgb(0, 0, 0);
+    z-index: 20;
+}
+
+
+.modcont3 {
+    position: fixed;
+    width: 100%;
+    bottom: 1em;
+    text-align: center;
+    color: #6d6d6d;
+    font-weight: bold;
+    font-size: 50%;
+    font-family: "Trajan Pro", "Verdana", "Geneva", sans-serif;
+    z-index: 1;
+}
+
+
+
+.logosvg {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-backface-visibility: hidden;
+    /*to avoid the ~1px shift in transitions*/
+    pointer-events: none;
+}
+
+/*
+.modcont3 a:hover {
+color: #060239;
+text-shadow: 0 0 0.9em rgba(6, 6, 6, 0.31);
+}
+
+.logosvg:hover {
+-webkit-filter: grayscale(0);
+filter: grayscale(0);
+-webkit-transform: scale(1.2);
+transform: scale(1.2);
+-webkit-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+*/
+
+.modcont3:hover a {
+    color: #060239;
+    text-shadow: 0 0 0.9em rgba(6, 6, 6, 0.31);
+}
+
+.modcont3:hover .logosvg {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
 }

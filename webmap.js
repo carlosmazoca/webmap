@@ -4,6 +4,21 @@
 // JS Document
 // Code by Carlos Mazoca, Geoscientist and Jack of all trades
 
+//the modal window to choose your version of the webmap
+window.onload = function () {
+    document.getElementById('webtri').onclick = function () {
+        document.getElementById('modal').style.display = "none"
+    };
+    document.getElementById('webpan').onclick = function () {
+        document.getElementById('modal').style.display = "none"
+    };
+//    document.getElementById('webinv').onclick = function () {
+//        document.getElementById('modal').style.display = "none"
+//    };
+//    
+    
+};
+
 
 var map;
 var layers = [];
