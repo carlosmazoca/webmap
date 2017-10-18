@@ -5,19 +5,19 @@
 // Code by Carlos Mazoca, Geoscientist and Jack of all trades
 
 //the modal window to choose your version of the webmap
-window.onload = function () {
-    document.getElementById('webtri').onclick = function () {
-        document.getElementById('modal').style.display = "none"
-    };
-    document.getElementById('webpan').onclick = function () {
-        document.getElementById('modal').style.display = "none"
-    };
-//    document.getElementById('webinv').onclick = function () {
-//        document.getElementById('modal').style.display = "none"
-//    };
-//    
-    
-};
+$(document).ready(function () {
+    $("#webtri").click(function (event) {
+        $('#modal,.pan').hide();
+    });
+
+    $("#webpan").click(function (event) {
+        $('#modal,.tri').hide();
+        $(".headPAN,.pan").show();
+    });
+
+});
+
+
 
 
 var map;
@@ -39,6 +39,22 @@ function toggleTrilha(i) {
     }
 }
 
+
+// Toggle layers (meio físico/environmental layers) onclick.
+// This function allows to deactivate an existing layer if a new one is selected
+function toggleLayer(i) {
+    'use strict';
+    layers[0].setMap(null);
+    layers[1].setMap(null);
+    layers[2].setMap(null);
+    layers[3].setMap(null);
+    layers[4].setMap(null);
+    layers[5].setMap(null);
+    layers[6].setMap(null);
+    layers[7].setMap(null);
+    layers[8].setMap(null);
+    layers[i].setMap(map);
+}
 
 // Remove hiking trails if clicked on municipality/city name
 function closeTrilha() {
@@ -67,6 +83,10 @@ function closeTrilha() {
     layers[31].setMap(null);
     layers[32].setMap(null);
     layers[33].setMap(null);
+    layers[34].setMap(null);
+    layers[35].setMap(null);
+    layers[36].setMap(null);
+    layers[37].setMap(null);
 }
 
 
@@ -85,21 +105,6 @@ function closeLayer() {
 }
 
 
-// Toggle layers (meio físico/environmental layers) onclick.
-// This function allows to deactivate an existing layer if a new one is selected
-function toggleLayer(i) {
-    'use strict';
-    layers[0].setMap(null);
-    layers[1].setMap(null);
-    layers[2].setMap(null);
-    layers[3].setMap(null);
-    layers[4].setMap(null);
-    layers[5].setMap(null);
-    layers[6].setMap(null);
-    layers[7].setMap(null);
-    layers[8].setMap(null);
-    layers[i].setMap(map);
-}
 
 
 // Initialize the map
@@ -123,24 +128,24 @@ function initialize() {
 
     //Set new locations and zoom level on city name click
     $(document).ready(function () {
-        $("#CAR").on('click', function () {
+        $(".carzoom").on('click', function () {
             newLocation(-23.6386442, -45.4337792);
-            map.setZoom(11);
+            map.setZoom(Math.min(11, map.getZoom()));
         });
 
-        $("#ILB").on('click', function () {
+        $(".ilbzoom").on('click', function () {
             newLocation(-23.8353659, -45.3224381);
-            map.setZoom(12);
+            map.setZoom(Math.min(12, map.getZoom()));
         });
 
-        $("#SSB").on('click', function () {
+        $(".ssbzoom").on('click', function () {
             newLocation(-23.7691073, -45.6138593);
-            map.setZoom(11);
+            map.setZoom(Math.min(11, map.getZoom()));
         });
 
-        $("#UBT").on('click', function () {
+        $(".ubtzoom").on('click', function () {
             newLocation(-23.3975304, -45.0342757);
-            map.setZoom(11);
+            map.setZoom(Math.min(11, map.getZoom()));
         });
     });
 
@@ -185,47 +190,57 @@ function initialize() {
         }
     });
 
-//
-//    // Define button colors (meio físico/environmental layers) when clicked
-//    // This function only applies to the environmental layers
-//    $(document).ready(function () {
-//        $('.white,.grey').on('click', function () {
-//            var isActive = ($(this).hasClass('selected')) ? true : false; // checks if it is already active
-//            $('.selected').removeClass('selected');
-//
-//            if (!isActive) {
-//                $(this).addClass('selected');
-//            } // set active only if it was not active
-//        });
-//    });
-    
-    
-        // Define button colors (meio físico/environmental layers) when clicked
+    //
+    //    // Define button colors (meio físico/environmental layers) when clicked
+    //    // This function only applies to the environmental layers
+    //    $(document).ready(function () {
+    //        $('.white,.grey').on('click', function () {
+    //            var isActive = ($(this).hasClass('selected')) ? true : false; // checks if it is already active
+    //            $('.selected').removeClass('selected');
+    //
+    //            if (!isActive) {
+    //                $(this).addClass('selected');
+    //            } // set active only if it was not active
+    //        });
+    //    });
+
+
+    // Define button colors (meio físico/environmental layers) when clicked
     // This function only applies to the environmental layers
     $(document).ready(function () {
         $('.white,.grey').on('click', function () {
             var isActive = ($(this).hasClass('selected')) ? true : false; // checks if it is already active
             $('.selected').removeClass('selected');
-            $('.close').removeClass('close');
+            $('.closelyr').removeClass('closelyr');
 
             if (!isActive) {
                 $(this).addClass('selected');
-                $(this).addClass('close');
+                $(this).addClass('closelyr');
             } // set active only if it was not active
         });
     });
 
 
-    // Define button colors (municipality/city) when clicked
-    // This function only applies to the city layers
+    //     Define button colors (municipality/city) when clicked
+    //     This function only applies to the city layers
     $(document).ready(function () {
-        $('.whiteTRI,.greyTRI').on('click', function () {
+        $('.whiteTRI,.greyTRI').filter(".tri").on('click', function () {
             var isActive = ($(this).hasClass('selectedTRI')) ? true : false; // checks if it is already active
             $('.selectedTRI').removeClass('selectedTRI');
             $('.close').removeClass('close');
 
             if (!isActive) {
                 $(this).addClass('selectedTRI');
+                $(this).addClass('close');
+            } // set active only if it was not active
+        });
+        $('.whiteTRI,.greyTRI').filter(".pan").on('click', function () {
+            var isActive = ($(this).hasClass('selectedPAN')) ? true : false; // checks if it is already active
+            $('.selectedPAN').removeClass('selectedPAN');
+            $('.close').removeClass('close');
+
+            if (!isActive) {
+                $(this).addClass('selectedPAN');
                 $(this).addClass('close');
             } // set active only if it was not active
         });
@@ -367,10 +382,6 @@ function initialize() {
 
     layers[11] = new google.maps.KmlLayer('http://www.igc.usp.br/fileadmin/files/geohereditas/webmap_kml/CRG_TJ_PP.kml', {
         preserveViewport: false,
-        animation: google.maps.Animation.DROP,
-        label: {
-            text: '!'
-        },
         map: map
     });
 
@@ -494,6 +505,59 @@ function initialize() {
         preserveViewport: false,
         map: map
     });
+
+
+    //    INTEPRETIVE PANNELS KML FILES
+
+    //    Em Caraguatatuba
+    layers[34] = new google.maps.FusionTablesLayer({
+        query: {
+            select: "'col2>>0'",
+            from: '161DhWEVz1xuK4kGBJkCyMvhj1-sBaNuo7Is09KtO',
+            where: "'Município' = 'Caraguatatuba'"
+        },
+        map: map,
+        styleId: 2,
+        templateId: 2
+    });
+
+    //    Em Ilhabela    
+    layers[35] = new google.maps.FusionTablesLayer({
+        query: {
+            select: "'col2>>0'",
+            from: '161DhWEVz1xuK4kGBJkCyMvhj1-sBaNuo7Is09KtO',
+            where: "'Município' = 'Ilhabela'"
+        },
+        map: map,
+        styleId: 2,
+        templateId: 2
+    });
+
+    //    Em São Sebastião    
+    layers[36] = new google.maps.FusionTablesLayer({
+        query: {
+            select: "'col2>>0'",
+            from: '161DhWEVz1xuK4kGBJkCyMvhj1-sBaNuo7Is09KtO',
+            where: "'Município' = 'São Sebastião'"
+        },
+        map: map,
+        styleId: 2,
+        templateId: 2
+    });
+
+    //    Em Ubatuba    
+    layers[37] = new google.maps.FusionTablesLayer({
+        query: {
+            select: "'col2>>0'",
+            from: '161DhWEVz1xuK4kGBJkCyMvhj1-sBaNuo7Is09KtO',
+            where: "'Município' = 'Ubatuba'"
+        },
+        map: map,
+        styleId: 2,
+        templateId: 2
+    });
+
+
 
     //Loop that sets the map to the layers        
     for (var i = 0; i < layers.length; i++) {

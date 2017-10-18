@@ -2,13 +2,14 @@
 
 
 /* CSS Document */
-/* Code by Carlos Mazoca, Geoscientist and Jack of all trades */
 
+/* Code by Carlos Mazoca, Geoscientist and Jack of all trades */
 
 /*
 Our green:#004221
 Our gold:#996600
 Our red: #900
+Our blue: #060239
 */
 
 html,
@@ -43,11 +44,8 @@ a {
     bottom: 0;
     height: 100%;
     overflow: hidden;
-/*    z-index: 1;*/
+    /*    z-index: 1;*/
 }
-
-
-/*I'm having some serious issues regarding elasticity/fluidity of the elements in the sidebar. HAVE TO FIX IT.*/
 
 #sidebar {
     position: fixed;
@@ -64,7 +62,7 @@ a {
     z-index: 5;
 }
 
-@media (min-device-width: 1025px) and (max-device-width: 1600px) {
+@media (max-device-width: 1600px) {
     #header {
         position: relative;
         top: 0.5%;
@@ -73,7 +71,12 @@ a {
         height: 15vh;
         border-top: 6px #004221 solid;
         border-bottom: 3px #004221 solid;
-/*        z-index: 10;*/
+        /*        z-index: 10;*/
+    }
+    #header.pan {
+        border-top: 6px #060239 solid;
+        border-bottom: 3px #060239 solid;
+        /*        z-index: 10;*/
     }
     .headertitle {
         position: absolute;
@@ -119,20 +122,20 @@ The main part of the sidebar. Where selections by the user are made.
         top: 2.1em;
         left: 0;
         width: 100%;
-/*        z-index: 10;*/
+        /*        z-index: 10;*/
     }
     #databox_upper {
         position: relative;
         left: 0;
         width: 100%;
-/*        z-index: 15;*/
+        /*        z-index: 15;*/
     }
     #databox_bottom {
         position: relative;
         top: -0.5em;
         left: 0;
         width: 100%;
-/*        z-index: 15;*/
+        /*        z-index: 15;*/
     }
     .title {
         position: relative;
@@ -162,6 +165,16 @@ The main part of the sidebar. Where selections by the user are made.
     }
 }
 
+/*
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+iMACS and TVS
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+*/
+
 @media (min-device-width: 1601px) {
     #header {
         position: relative;
@@ -172,7 +185,12 @@ The main part of the sidebar. Where selections by the user are made.
         height: 15vh;
         border-top: 6px #004221 solid;
         border-bottom: 3px #004221 solid;
-/*        z-index: 10;*/
+        /*        z-index: 10;*/
+    }
+    #header.pan {
+        border-top: 6px #060239 solid;
+        border-bottom: 3px #060239 solid;
+        /*        z-index: 10;*/
     }
     .headertitle {
         position: absolute;
@@ -231,14 +249,12 @@ The main part of the sidebar. Where selections by the user are made.
         /*    bottom: 0;*/
         width: 100%;
         z-index: 10;
-        
     }
     #databox_upper {
         position: relative;
         left: 0;
         width: 100%;
         z-index: 15;
-        
     }
     #databox_bottom {
         position: relative;
@@ -246,7 +262,6 @@ The main part of the sidebar. Where selections by the user are made.
         left: 0;
         width: 100%;
         z-index: 15;
-        
     }
     .title {
         position: relative;
@@ -341,7 +356,6 @@ Svg animation in the GeoHereditas name on the bottom of the sidebar:
     color: #996600;
 }
 
-
 /*
 --------------------------------------------------------------------------
 Tooltips texts
@@ -372,6 +386,9 @@ Tooltips texts
     transition: opacity 2s;
 }
 
+.help-tip.pan .tooltiptext.pan {
+    background-color: rgba(6, 2, 57, 0.70);
+}
 
 /*Circle to call the tooltip*/
 
@@ -386,7 +403,6 @@ Tooltips texts
     cursor: default;
 }
 
-
 /*Question mark on the circle*/
 
 .help-tip:before {
@@ -394,7 +410,6 @@ Tooltips texts
     font-weight: bold;
     color: rgb(0, 0, 0);
 }
-
 
 /* Show the tooltip text when you mouse over the tooltip container */
 
@@ -407,10 +422,13 @@ Tooltips texts
     background-color: rgba(0, 42, 21, 0.70);
 }
 
+.help-tip.pan:hover {
+    background-color: rgba(6, 2, 57, 0.70);
+}
+
 .help-tip:hover:before {
     color: #fff;
 }
-
 
 /*
 --------------------------------------------------------------------------
@@ -418,6 +436,7 @@ Close button at the city names
 --------------------------------------------------------------------------
 */
 
+.closelyr::after,
 .close::after {
     position: absolute;
     content: '\00d7';
@@ -428,7 +447,6 @@ Close button at the city names
     left: 88%;
     z-index: 35;
 }
-
 
 /*
 --------------------------------------------------------------------------
@@ -474,7 +492,6 @@ Style for the white/grey lines of selection in the databox
     z-index: 30;
 }
 
-
 .whiteinner {
     position: relative;
     text-align: left;
@@ -486,11 +503,11 @@ Style for the white/grey lines of selection in the databox
     padding-left: 5%;
     margin: 0.125em 0 0.125em 0;
     border-color: white;
-/*
+    /*
     left: 0;
     right: 0;
 */
-/*    height: 250%;*/
+    /*    height: 250%;*/
     background-color: rgba(255, 255, 255, 0.5);
     z-index: 30;
 }
@@ -502,7 +519,7 @@ Style for the white/grey lines of selection in the databox
     /*      font-size: 0.875em;*/
     /*      font-size: 2vh;*/
     font-size: 85%;
-        line-height: 250%;
+    line-height: 250%;
     padding-left: 5%;
     margin: 0.125em 0 0.125em 0;
 
@@ -532,6 +549,14 @@ Style for the white/grey lines of selection in the databox
     background-color: rgba(144, 144, 144, 0.39);
     box-shadow: inset -0.3em 0 0 0 #004221;
     z-index: 30;
+}
+
+.whiteTRI.pan:hover,
+.greyTRI.pan:hover,
+.white.pan:hover,
+.grey.pan:hover {
+    box-shadow: inset -0.3em 0 0 0 #060239;
+    color: #060239;
 }
 
 .selectedTRI,
@@ -564,6 +589,34 @@ Style for the white/grey lines of selection in the databox
     z-index: 30;
 }
 
+.selectedPAN {
+    position: relative;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    border-color: white;
+    left: 0;
+    right: 0;
+    background-color: rgba(6, 2, 57, 0.35);
+    box-shadow: inset -0.3em 0 0 0 #060239;
+    z-index: 30;
+}
+
+.selectedPAN:hover,
+    {
+    position: relative;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    /*    font-size: 0.875em;*/
+    /*    line-height: 250%;*/
+    border-color: white;
+    left: 0;
+    right: 0;
+    background-color: rgba(6, 2, 57, 0.5);
+    box-shadow: inset -0.3em 0 0 0 #060239;
+    z-index: 30;
+}
 
 /*
 --------------------------------------------------------------------------
@@ -575,27 +628,9 @@ Hiking trails list style
     position: relative;
 }
 
-
-/*Smartphones*/
-
-
-/*
-@media screen (max-device-width: 640px) {}
-*/
-
-
-/*Tablets*/
-
-
-/*
-@media (min-device-width: 641px) and (min-device-width: 1024px) {}
-*/
-
-
 /*Laptops*/
 
-/*@media (min-device-width: 1025px) and (max-device-width: 1600px) {*/
-@media (max-device-width: 1600px) {    
+@media (max-device-width: 1600px) {
     .litoDrop-content {
         left: 17.0em;
         top: 22.8em;
@@ -651,7 +686,6 @@ Hiking trails list style
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 }
-
 
 /*iMacs and TVs*/
 
@@ -774,8 +808,6 @@ a:visited {
     text-decoration: none;
 }
 
-
-
 /*
 --------------------------------------------------------------------------
 Modal Window
@@ -807,7 +839,6 @@ background: rgba(0, 0, 0, 0.88);
     }
 }
 
-
 .modalcontent {
     position: absolute;
     font-family: "Open Sans", "Helvetica", sans-serif;
@@ -819,10 +850,10 @@ background: rgba(0, 0, 0, 0.88);
     /*    -webkit-border-radius: 1%;*/
     /*    -moz-border-radius: 1%;*/
     width: 40em;
-    height: 50.5%;
+    /*    height: 50.5%;*/
     padding: 0;
-        box-shadow: 0 0 20px 1px rgba(111, 111, 111, 0.5);
-/*    box-shadow: 0 0 20px 4px rgb(0, 0, 0);*/
+    box-shadow: 0 0 20px 1px rgba(111, 111, 111, 0.5);
+    /*    box-shadow: 0 0 20px 4px rgb(0, 0, 0);*/
     -webkit-animation: background-anim-slow 1s linear;
 }
 
@@ -849,20 +880,19 @@ background: rgba(0, 0, 0, 0.88);
     height: 53%;
 }
 
-
 .modcont2 {
     text-align: center;
     position: relative;
     color: #505050;
     vertical-align: top;
+    -webkit-backface-visibility: hidden;
+    /*to avoid the ~1px shift in transitions*/
 }
-
 
 .modcont2 a:hover {
     color: #060239;
     text-shadow: 0 0 0.9em rgba(6, 6, 6, 0.31);
 }
-
 
 .img-circular1,
 .img-circular2,
@@ -871,25 +901,17 @@ background: rgba(0, 0, 0, 0.88);
     height: 9em;
     background-size: cover;
     display: inline-block;
-    border-radius: 100px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     position: relative;
     margin: 12em 1.5em 0.5em 1.5em;
-
-    /*    blur*/
-    /*
--webkit-filter: blur(0.1em);
-filter: blur(0.1em);
-*/
     /*    grayscale*/
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 
     -webkit-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
-    -webkit-backface-visibility: hidden;
-    /*to avoid the ~1px shift in transitions*/
 }
 
 .img-circular1 {
@@ -909,8 +931,6 @@ filter: blur(0.1em);
     background-image: url('http://www.igc.usp.br/fileadmin/files/geohereditas/sp_inventory/4.6.5.1.jpg');
 }
 
-
-
 .img-circular1:hover,
 .img-circular2:hover {
     /*    grayscale*/
@@ -925,9 +945,8 @@ filter: blur(0.1em);
     z-index: 20;
 }
 
-
 .modcont3 {
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 1em;
     text-align: center;
@@ -938,31 +957,11 @@ filter: blur(0.1em);
     z-index: 1;
 }
 
-
-
 .logosvg {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
-    -webkit-backface-visibility: hidden;
-    /*to avoid the ~1px shift in transitions*/
     pointer-events: none;
 }
-
-/*
-.modcont3 a:hover {
-color: #060239;
-text-shadow: 0 0 0.9em rgba(6, 6, 6, 0.31);
-}
-
-.logosvg:hover {
--webkit-filter: grayscale(0);
-filter: grayscale(0);
--webkit-transform: scale(1.2);
-transform: scale(1.2);
--webkit-transition: .2s ease-in-out;
-transition: .2s ease-in-out;
-}
-*/
 
 .modcont3:hover a {
     color: #060239;
