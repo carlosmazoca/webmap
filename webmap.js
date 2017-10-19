@@ -4,26 +4,20 @@
 // JS Document
 // Code by Carlos Mazoca, Geoscientist and Jack of all trades
 
+
+var map;
+var layers = [];
+
 //the modal window to choose your version of the webmap
 $(document).ready(function () {
     $("#webtri").click(function (event) {
         $('#modal,.pan').hide();
     });
-
     $("#webpan").click(function (event) {
         $('#modal,.tri').hide();
         $(".headPAN,.pan").show();
     });
-
 });
-
-
-
-
-var map;
-var layers = [];
-
-
 
 // Toggle layers (trilhas/hiking trails) onclick
 function toggleTrilha(i) {
@@ -38,7 +32,6 @@ function toggleTrilha(i) {
         layers[i].setMap(null);
     }
 }
-
 
 // Toggle layers (meio físico/environmental layers) onclick.
 // This function allows to deactivate an existing layer if a new one is selected
@@ -89,7 +82,6 @@ function closeTrilha() {
     layers[37].setMap(null);
 }
 
-
 // Remove hiking trails if clicked on municipality/city name
 function closeLayer() {
     'use strict';
@@ -105,8 +97,6 @@ function closeLayer() {
 }
 
 
-
-
 // Initialize the map
 function initialize() {
     'use strict';
@@ -116,7 +106,6 @@ function initialize() {
         mapTypeId: google.maps.MapTypeId.TERRAIN
     });
 
-
     // Set new locations on city name click. This will be used in the JQuery function
     function newLocation(newLat, newLng) {
         map.setCenter({
@@ -124,7 +113,6 @@ function initialize() {
             lng: newLng
         });
     }
-
 
     //Set new locations and zoom level on city name click
     $(document).ready(function () {
@@ -148,7 +136,6 @@ function initialize() {
             map.setZoom(Math.min(11, map.getZoom()));
         });
     });
-
 
     // Activate/Deactive conteiner of hiking trail for each municipality/city
     $('.whiteTRI,.greyTRI').on('click', function () {
@@ -175,7 +162,6 @@ function initialize() {
         }
     });
 
-
     // Activate/Deactive conteiner of theme layers
     $('.white,.grey').on('click', function () {
         if ($(this).is("#GEL")) {
@@ -189,21 +175,6 @@ function initialize() {
             document.getElementById("relDrop").classList.remove("show");
         }
     });
-
-    //
-    //    // Define button colors (meio físico/environmental layers) when clicked
-    //    // This function only applies to the environmental layers
-    //    $(document).ready(function () {
-    //        $('.white,.grey').on('click', function () {
-    //            var isActive = ($(this).hasClass('selected')) ? true : false; // checks if it is already active
-    //            $('.selected').removeClass('selected');
-    //
-    //            if (!isActive) {
-    //                $(this).addClass('selected');
-    //            } // set active only if it was not active
-    //        });
-    //    });
-
 
     // Define button colors (meio físico/environmental layers) when clicked
     // This function only applies to the environmental layers
@@ -219,7 +190,6 @@ function initialize() {
             } // set active only if it was not active
         });
     });
-
 
     //     Define button colors (municipality/city) when clicked
     //     This function only applies to the city layers
@@ -246,18 +216,13 @@ function initialize() {
         });
     });
 
-
     // Define button colors (hiking trails) when clicked
     // This function only applies to the hiking trail layers
     $(".carDrop-content a, .ilbDrop-content a, .ssbDrop-content a, .ubtDrop-content a").click(function () {
         $('selectedTRI').removeClass('selectedTRI');
         $(this).toggleClass('selectedTRI');
     });
-    //// Função que realiza a mesma operação que a função acima
-    //    $(".carDrop-content a").click(function () {
-    //        $('selectedTRI').not(this).removeClass('selectedTRI');
-    //        $(this).toggleClass('selectedTRI');
-    //    });
+
 
 
     //////////////////////////////////////////////
@@ -267,7 +232,6 @@ function initialize() {
     // I WOULD REALLY APPRECIATE if I could put it all in a different JS document
 
     // 1 Fusion Tables Layers (environmental layers)
-
     //  Geologia CPRM
     layers[0] = new google.maps.FusionTablesLayer({
         query: {
@@ -322,7 +286,7 @@ function initialize() {
         styleId: 2,
         templateId: 2
     });
-    //    
+
     //		Solos  Instituto Agronômico de Campinas
     layers[5] = new google.maps.FusionTablesLayer({
         query: {
@@ -507,8 +471,7 @@ function initialize() {
     });
 
 
-    //    INTEPRETIVE PANNELS KML FILES
-
+    //  3  INTEPRETIVE PANNELS KML FILES
     //    Em Caraguatatuba
     layers[34] = new google.maps.FusionTablesLayer({
         query: {
@@ -556,8 +519,6 @@ function initialize() {
         styleId: 2,
         templateId: 2
     });
-
-
 
     //Loop that sets the map to the layers        
     for (var i = 0; i < layers.length; i++) {
