@@ -4,7 +4,7 @@
 // JS Document
 // Code by Carlos Mazoca, Geoscientist and Jack of all trades
 
-
+var geocoder;
 var map;
 var layers = [];
 
@@ -100,11 +100,104 @@ function closeLayer() {
 // Initialize the map
 function initialize() {
     'use strict';
+    geocoder = new google.maps.Geocoder();
     map = new google.maps.Map(document.getElementById('map-canvas'), {
         center: new google.maps.LatLng(-23.682115699537057, -45.33391768457034),
         zoom: 10,
         mapTypeId: google.maps.MapTypeId.TERRAIN
     });
+
+
+
+    ////Google Maps Search Box with autocomplete////
+
+    var input = document.getElementById('searchInput');
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.bindTo('bounds', map);
+
+    var infowindow = new google.maps.InfoWindow();
+    var marker = new google.maps.Marker({
+        map: map,
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        anchorPoint: new google.maps.Point(0, -29)
+    });
+
+    autocomplete.addListener('place_changed', function () {
+        infowindow.close();
+        marker.setVisible(false);
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+            window.alert("Selecione uma das opçções mostrada na lista.");
+            return;
+        }
+
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+        } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);
+        }
+        marker.setIcon(({
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(35, 35)
+        }));
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+
+        var address = '';
+        if (place.address_components) {
+            address = [
+                (place.address_components[0] && place.address_components[0].short_name || ''),
+                (place.address_components[1] && place.address_components[1].short_name || ''),
+                (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+        }
+
+        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+        infowindow.open(map, marker);
+
+        //Location details
+        for (var i = 0; i < place.address_components.length; i++) {
+            if (place.address_components[i].types[0] == 'postal_code') {
+                document.getElementById('postal_code').innerHTML = place.address_components[i].long_name;
+            }
+            if (place.address_components[i].types[0] == 'country') {
+                document.getElementById('country').innerHTML = place.address_components[i].long_name;
+            }
+        }
+        document.getElementById('location').innerHTML = place.formatted_address;
+        document.getElementById('lat').innerHTML = place.geometry.location.lat();
+        document.getElementById('lon').innerHTML = place.geometry.location.lng();
+    });
+
+    //Reverse geocoding
+    google.maps.event.addListener(marker, 'drag', function () {        
+        geocoder.geocode({
+            'latLng': marker.getPosition()
+        }, function (results, status) {            
+            if (status == google.maps.GeocoderStatus.OK) {                    
+                if (results[0]) {                    
+                    $('#searchInput').val(results[0].formatted_address);
+                    infowindow.setContent(results[0].formatted_address);
+                }            
+            }        
+        });    
+    });
+
+    //Double click on the marker remove it and clean the search box
+    marker.addListener("dblclick", function () {
+        marker.setMap(null);
+        $('#searchInput').val('');
+    });
+
+    ////end of Google Maps Search Box with autocomplete////
 
     // Set new locations on city name click. This will be used in the JQuery function
     function newLocation(newLat, newLng) {

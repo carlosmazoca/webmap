@@ -12,8 +12,6 @@
     <!--<meta content="Conheça a geodiversidade e o patrimônio geológico de São Paulo por trilhas, painéis de interpretação ambiental e roteiros geoturísticos." name="description">-->
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta content="Trilhas, Painéis, Roteiro Geoturístico, Geoparque, Geopark, Inventário, Geossítios, Geoconservação, Patrimônio Geológico, Geodiversidade, Geoturismo, Interpretação ambiental, Geociências, Geologia, Geografia" name="keywords">
-    <meta name=viewport content="width=device-width, initial-scale=1">
-
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-35268915-1"></script>
@@ -28,11 +26,10 @@
         gtag('config', 'UA-35268915-1');
     </script>
 
-
     <link href="webmapstyle.css" rel="stylesheet" type="text/css">
     <!--[if IE]><link rel="shortcut icon" href="img/favicon.ico"><![endif]-->
     <!--    <link href="img/favicon.png" rel="shortcut icon" />-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkxxOF0dG8xutmesdiLQkv22fjsdS65WE" type="text/javascript">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkxxOF0dG8xutmesdiLQkv22fjsdS65WE&libraries=places&callback=initialize" async defer type="text/javascript">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
     </script>
@@ -78,6 +75,13 @@ Quem Somos
             </div>
         </div>
     </div>
+    
+    
+               
+<input id="searchInput" class="controls" type="text" placeholder="Busque um endereço">
+
+
+    
 
     <div id="sidebar">
 
